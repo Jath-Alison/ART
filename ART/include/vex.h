@@ -6,6 +6,8 @@
 #include "v5.h"
 #include "v5_vcs.h"
 
+vex::brain Brain;
+vex::controller Controller1;
 
 #define waitUntil(condition)                                                   \
   do {                                                                         \

@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
 /*    Module:       main.cpp                                                  */
-/*    Author:       jatha                                                     */
+/*    Author:       Jath Alison                                               */
 /*    Created:      6/24/2024, 11:29:26 PM                                    */
 /*    Description:  V5 project                                                */
 /*                                                                            */
@@ -9,10 +9,8 @@
 
 #include "vex.h"
 
-using namespace vex;
-
 // A global instance of competition
-competition Competition;
+vex::competition Competition;
 
 // define your global instances of motors and other devices here
 
@@ -70,7 +68,7 @@ void usercontrol(void) {
     // update your motors, etc.
     // ........................................................................
 
-    wait(20, msec); // Sleep the task for a short amount of time to
+    vex::wait(20, vex::msec); // Sleep the task for a short amount of time to
                     // prevent wasted resources.
   }
 }
@@ -88,6 +86,6 @@ int main() {
 
   // Prevent main from exiting with an infinite loop.
   while (true) {
-    wait(100, msec);
+    vex::wait(100, vex::msec);
   }
 }
