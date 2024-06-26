@@ -1,11 +1,13 @@
-/*----------------------------------------------------------------------------*/
-/*                                                                            */
-/*    Module:       main.cpp                                                  */
-/*    Author:       Jath Alison                                               */
-/*    Created:      6/24/2024, 11:29:26 PM                                    */
-/*    Description:  V5 project                                                */
-/*                                                                            */
-/*----------------------------------------------------------------------------*/
+/**
+ * @file main.cpp
+ * @author Jath Alison (Jath.Alison@gmail.com)
+ * @brief Source containing the main function and competition functions such as auton and usercontrol
+ * @version 0.1
+ * @date 06-25-2024
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
 
 #include "vex.h"
 
