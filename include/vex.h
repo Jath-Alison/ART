@@ -21,8 +21,8 @@
 #include "v5.h"
 #include "v5_vcs.h"
 
-extern vex::brain Brain;            ///< a brain object representing the V5 Brain
-extern vex::controller Controller1; ///< a controller object representing the Primary Controller
+extern vex::brain Brain;            /**< a brain object representing the V5 Brain */
+extern vex::controller Controller1; /**< a controller object representing the Primary Controller */
 
 #define waitUntil(condition) \
   do                         \
