@@ -65,8 +65,9 @@ namespace art
          * @return SimpleMotor& (SimpleMotor Refrence)
          *
          * @b Example:
-         * @code {.cpp} SimpleMotor testMotor = SimpleMotor(
-         * vex::motor(vex::PORT10 ) ); testMotor.withSpeedMode( true );
+         * @code {.cpp}
+         * SimpleMotor testMotor = SimpleMotor( vex::motor(vex::PORT10 ) );
+         * testMotor.withSpeedMode( true );
          * @endcode
          *
          * @b Chained @b Methods @b Example:
@@ -74,9 +75,9 @@ namespace art
          * Because a refrence to the object is returned, that refrence can be
          * used to call other methods.
          *
-         * @code {.cpp} SimpleMotor testMotor = SimpleMotor(
-         * vex::motor(vex::PORT10 ) ); testMotor.withSpeedMode( true ).set( 50
-         * );
+         * @code {.cpp}
+         * SimpleMotor testMotor = SimpleMotor( vex::motor(vex::PORT10 ) );
+         * testMotor.withSpeedMode( true ).set( 50 );
          * @endcode
          *
          * @b Chained @b Methods @b Example:
@@ -86,8 +87,8 @@ namespace art
          * chain .set(double cmd) onto the end, it doesn't return an object
          * refrence, so it couldn't be used to construct testMotor.
          *
-         * @code {.cpp} SimpleMotor testMotor = SimpleMotor(
-         * vex::motor(vex::PORT10 ) ).withSpeedMode( true );
+         * @code {.cpp}
+         * SimpleMotor testMotor = SimpleMotor( vex::motor(vex::PORT10 ) ).withSpeedMode( true );
          * @endcode
          */
         SimpleMotor &withSpeedMode(bool speedMode);

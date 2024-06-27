@@ -15,3 +15,4 @@
 #pragma once
 
 #include "ART/SimpleMotor.h"
+#include "ART/SimpleMotorGroup.h"
