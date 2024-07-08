@@ -82,7 +82,7 @@ namespace art
          *
          * @b Chained @b Methods @b Example:
          *
-         * Keep in mind, methods that don't return a refrence to a SimpleMotor
+         * @warning Methods that don't return a refrence to a SimpleMotor
          * Object can't be used to create a new Object. Even though you could
          * chain .set(double cmd) onto the end, it doesn't return an object
          * refrence, so it couldn't be used to construct testMotor.
