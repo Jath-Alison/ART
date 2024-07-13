@@ -17,6 +17,3 @@
 #pragma once
 
 #include "vex.h"
-#include "ART\ART.h"
-
-extern art::SimpleMotorGroup testMotorGroup;

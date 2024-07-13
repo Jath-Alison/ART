@@ -18,10 +18,3 @@
 
 vex::brain Brain;
 vex::controller Controller1;
-
-vex::motor a = vex::motor( vex::PORT20 );
-vex::motor b = vex::motor( vex::PORT12, true );
-
-art::SimpleMotorGroup testMotorGroup = art::SimpleMotorGroup( vex::motor_group(
-       a , b
-) ).withSpeedMode( true );

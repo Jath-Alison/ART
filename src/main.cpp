@@ -15,7 +15,6 @@
 
 #include "vex.h"
 #include "Art\ART.h"
-#include "robotConfig.h"
 
 
 /**
@@ -82,8 +81,6 @@ void usercontrol(void)
 {
 	while (1)
 	{
-
-		testMotorGroup.set( Controller1.Axis1.position() );
 
 		vex::wait(20, vex::msec);
 	}
