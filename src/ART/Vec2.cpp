@@ -1,7 +1,7 @@
 /**
  * @file Vec2.cpp
  * @author Jath Alison (Jath.Alison@gmail.com)
- * @brief 
+ * @brief Source containing the 2d Vector class
  * @version 0.1
  * @date 07-13-2024
  * 
