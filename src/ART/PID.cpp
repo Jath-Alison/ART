@@ -1,3 +1,16 @@
+/**
+ * @file PID.cpp
+ * @author Jath Alison (Jath.Alison@gmail.com)
+ * @brief Source containing a general use PID class
+ * @version 0.1
+ * @date 07-13-2024
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ * This is the source defining the PID class. The class
+ * aims to package PID functions together to be used across different
+ * applications.
+ */
 #include "ART/PID.h"
 
 namespace art
