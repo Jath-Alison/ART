@@ -44,42 +44,42 @@ namespace art
         /**
          * @brief Constructs a Length from Inches
          * 
-         * @param pixels the length in Inches
+         * @param inches the length in Inches
          * @return Length - the constructed Length
          */
         friend Length Inches(double inches);
         /**
          * @brief Constructs a Length from Feet
          * 
-         * @param pixels the length in Feet
+         * @param feet the length in Feet
          * @return Length - the constructed Length
          */
         friend Length Feet(double feet);
         /**
          * @brief Constructs a Length from Meters
          * 
-         * @param pixels the length in Meters
+         * @param meters the length in Meters
          * @return Length - the constructed Length
          */
         friend Length Meters(double meters);
         /**
          * @brief Constructs a Length from Centimeters
          * 
-         * @param pixels the length in Centimeters
+         * @param centimeters the length in Centimeters
          * @return Length - the constructed Length
          */
         friend Length Centimeters(double centimeters);
         /**
          * @brief Constructs a Length from Millimeters
          * 
-         * @param pixels the length in Millimeters
+         * @param millimeters the length in Millimeters
          * @return Length - the constructed Length
          */
         friend Length Millimeters(double millimeters);
         /**
          * @brief Constructs a Length from Tiles
          * 
-         * @param pixels the length in Tiles
+         * @param tiles the length in Tiles
          * @return Length - the constructed Length
          */
         friend Length Tiles(double tiles);
@@ -215,42 +215,42 @@ namespace art
     /**
      * @brief Constructs a Length from Inches
      * 
-     * @param pixels the length in Inches
+     * @param inches the length in Inches
      * @return Length - the constructed Length
      */
     Length Inches(double inches);
     /**
      * @brief Constructs a Length from Feet
      * 
-     * @param pixels the length in Feet
+     * @param feet the length in Feet
      * @return Length - the constructed Length
      */
     Length Feet(double feet);
     /**
      * @brief Constructs a Length from Meters
      * 
-     * @param pixels the length in Meters
+     * @param meters the length in Meters
      * @return Length - the constructed Length
      */
     Length Meters(double meters);
     /**
      * @brief Constructs a Length from Centimeters
      * 
-     * @param pixels the length in Centimeters
+     * @param centimeters the length in Centimeters
      * @return Length - the constructed Length
      */
     Length Centimeters(double centimeters);
     /**
      * @brief Constructs a Length from Millimeters
      * 
-     * @param pixels the length in Millimeters
+     * @param millimeters the length in Millimeters
      * @return Length - the constructed Length
      */
     Length Millimeters(double millimeters);
     /**
      * @brief Constructs a Length from Tiles
      * 
-     * @param pixels the length in Tiles
+     * @param tiles the length in Tiles
      * @return Length - the constructed Length
      */
     Length Tiles(double tiles);
