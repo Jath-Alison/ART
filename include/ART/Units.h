@@ -162,11 +162,11 @@ namespace art
          * Length. Modifying the Length with operators is okay, but keep in mind
          * how those operations distribute.
          * @code {.cpp}
-         * art::Length = art::Inches(5) + 5; //stores a length of 6 inches(don't do this)
-         * art::Length = art::Inches(5) + art::Inches(5); //stores a length of 10 inches(do this instead)
-         * art::Length = art::Inches(5 + 5); //stores a length of 10 inches(this is best)
+         * art::Length length1 = art::Inches(5) + 5; //stores a length of 6 inches(don't do this)
+         * art::Length length2 = art::Inches(5) + art::Inches(5); //stores a length of 10 inches(do this instead)
+         * art::Length length3 = art::Inches(5 + 5); //stores a length of 10 inches(this is best)
          * 
-         * art::Length = art::Inches(5) * 5; //stores a length of 25 inches
+         * art::Length length4 = art::Inches(5) * 5; //stores a length of 25 inches
          * @endcode
          * 
          * As of right now, this number(f) is in Pixels, which is also the
@@ -187,7 +187,7 @@ namespace art
          * or Length operator=(double const &f), as oppsosed to a
          * Unit-specifying constructing function (Inches, Tiles, Meters etc.).
          * @code {.cpp}
-         * art::Length = art::Inches(5) * 5 + art::Feet(2); //stores a length of 49 (25+24) inches
+         * art::Length length = art::Inches(5) * 5 + art::Feet(2); //stores a length of 49 (25+24) inches
          * @endcode
          * 
          * Normal C++ order of operations applies, as each Length is simply replaced by it's underlying value.
