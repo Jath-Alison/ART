@@ -255,36 +255,174 @@ namespace art
      */
     Length Tiles(double tiles);
 
+    /**
+     * @brief A Utility Unit class for Angles
+     * 
+     * The Length class aims to provide a better way to convert and store
+     * different units for angles. This way, when a function asks for a
+     * direction to turn to, any unit can be used to specify the angle. This
+     * makes it easier to write and tune autons as well as perform calculations,
+     * as you can use whatever unit is most comfortable.
+     * 
+     * The Default/Internal unit for Angles is radians, since all the
+     * trignometric functions included in <cmath> use radians by default. This
+     * makes calculations easier and allows for the Angle class to be used to
+     * easily specify direction for the Vec2 class.
+     */ 
     class Angle
     {
     public:
+        /**
+         * @brief Constructs an Angle from Degrees
+         * 
+         * @param degrees the angle in Degrees
+         * @return Angle - the constructed Angle
+         */
         friend Angle Degrees(double degrees);
+        /**
+         * @brief Constructs an Angle from Radians
+         * 
+         * @param radians the angle in Radians
+         * @return Angle - the constructed Angle
+         */
         friend Angle Radians(double radians);
+        /**
+         * @brief Constructs an Angle from Revolutions
+         * 
+         * @param revolutions the angle in Revolutions
+         * @return Angle - the constructed Angle
+         */
         friend Angle Revolutions(double revolutions);
 
+        /**
+         * @brief Returns the Angle in degrees
+         * 
+         * @return double - the Angle in degrees
+         */
         double degrees();
+        /**
+         * @brief Returns the Angle in radians
+         * 
+         * @return double - the Angle in radians
+         */
         double radians();
+        /**
+         * @brief Returns the Angle in revolutions
+         * 
+         * @return double - the Angle in revolutions
+         */
         double revolutions();
 
+        /**
+         * @brief Construct a new Angle object
+         * 
+         * Initializes the value to 0. 
+         */
         Angle();
+        /**
+         * @brief Construct a new Angle object
+         * 
+         * @param f - a number(or Angle) to initialize m_value to
+         * 
+         * This constructor is used similarly to the assignment operator. It can
+         * be used to construct an Angle to copy the value of another length
+         * without needing to convert to and from a specified unit. In order
+         * words, instead of a number, another Angle can be used and/or
+         * modified by treating it as a number.
+         * 
+         * The number(f) is in radians, which is also the
+         * default output when a Angle is used as a number.
+         */
         Angle(double f);
 
         /**
-         * @brief 
+         * @brief Constrains the Angle to the -180 to 180 range
          * 
          * @todo add seperate constrains for 0 to 360 and -180 to 180 (this one is -180 to 180)
+         * 
+         * Wraps the Angle around until it fits within a single circle. This
+         * preserves the direction, but prevents over-representing the value.
+         * This can be used in places to optimize turns and rotations, but is
+         * mostly just utility should you want to reduce an angle while
+         * preserving the absolute direction.
          */
         void constrain();
 
+        /**
+         * @brief Assign a value to the Angle object
+         * 
+         * @param f - a number(or Angle) to initialize m_value to
+         * @return Angle - The new modified Angle
+         * 
+         * This overloaded assignment operator allows the result of an operation
+         * using an Angle to be stored by another Angle.
+         * 
+         * Keep in mind this works best when the value on the right side is an
+         * Angle. Modifying the Angle with operators is okay, but keep in mind
+         * how those operations distribute.
+         * @code {.cpp}
+         * art::Angle angle1 = art::Degrees(5) + 5; //stores an angle of ~ 291 inches(don't do this)
+         * art::Angle angle2 = art::Degrees(5) + art::Degrees(5); //stores an angle of 10 degrees(do this instead)
+         * art::Angle angle3 = art::Degrees(5 + 5); //stores an angle of 10 degrees(this is best)
+         * 
+         * art::Angle angle4 = art::Degrees(5) * 5; //stores an angle of 25 degrees
+         * @endcode
+         * 
+         * As of right now, this number(f) is in radians, which is also the
+         * default output when a Angle is used as a number.
+         */
         Angle operator=(double const &f);
+        /**
+         * @brief Returns the Angle as a default value(Radians)
+         * 
+         * @return double - the Angle as a default value(Radians)
+         * 
+         * This operator overload allows Angle to be treated as a plain old
+         * number. It can be typecasted to a double explicitly or just used in
+         * an expression. The value returned is technically in radians, but so
+         * long as the result is stored using Angle(double f) or Angle
+         * operator=(double const &f), as oppsosed to a Unit-specifying
+         * constructing function (Inches, Tiles, Meters etc.), it shouldn't be
+         * that important.
+         * @code {.cpp}
+         * art::Angle angle = art::Degrees(5) * 5 + art::Revolutions(1); //stores an Angle of 385 (25+360) degrees
+         * @endcode
+         * 
+         * Normal C++ order of operations applies, as each Angle is simply replaced by it's underlying value.
+         */
         operator double();
 
     private:
+        /**
+         * @brief The underlying value of the Angle
+         * 
+         * Stores the Angle in Radians. This is what is returned and modified by
+         * some methods, but this is also converted to and from other units
+         * using the corresponding constructing function or get method.
+         */
         double m_value{0.0};
     };
 
+    /**
+     * @brief Constructs an Angle from Degrees
+     * 
+     * @param degrees the angle in Degrees
+     * @return Angle - the constructed Angle
+     */
     Angle Degrees(double degrees);
+    /**
+     * @brief Constructs an Angle from Radians
+     * 
+     * @param radians the angle in Radians
+     * @return Angle - the constructed Angle
+     */
     Angle Radians(double radians);
+    /**
+     * @brief Constructs an Angle from Revolutions
+     * 
+     * @param revolutions the angle in Revolutions
+     * @return Angle - the constructed Angle
+     */
     Angle Revolutions(double revolutions);
 
 } // namespace art
