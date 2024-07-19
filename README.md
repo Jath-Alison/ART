@@ -5,7 +5,7 @@ ART aims to be a easy to use and flexible VexCode Library that provides teams wi
 ## Table of Contents
 - [ART: Astrobots Robot Template](#art-astrobots-robot-template)
   - [Table of Contents](#table-of-contents)
-    - [Project Goals](#project-goals)
+  - [Project Goals](#project-goals)
   - [Documentation](#documentation)
   - [Project Lifetime and Development plans](#project-lifetime-and-development-plans)
   - [Features](#features)
@@ -14,7 +14,7 @@ ART aims to be a easy to use and flexible VexCode Library that provides teams wi
   - [Contact](#contact)
   - [License Info](#license-info)
 
-### Project Goals
+## Project Goals
 
 The main goal of ART is to allow newer teams to explore and apply several of the powerful features commonly used within the Vex Robotics Competiton. Alongside the library itself, a major goal is to creat sufficient documentation and explanation for teams to fully understand the concepts they a are utilizing in thier code. This allows competitors to utilize the library for competition while abiding to \<G2\> (V5RC is a student-centered program) and allows them to grow thier knowledge and apply it outside of VRC.
 
