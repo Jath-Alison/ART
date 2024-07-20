@@ -1,6 +1,6 @@
 # ART: Astrobots Robot Template
 
-ART aims to be a easy to use and flexible VexCode Library that provides teams with powerful tools while also being a valuable resource to the Vex community.
+ART aims to be an easy-to-use and flexible VexCode Library that provides teams with powerful tools while also being a valuable resource to the Vex community.
 
 ## Table of Contents
 - [ART: Astrobots Robot Template](#art-astrobots-robot-template)
@@ -16,7 +16,7 @@ ART aims to be a easy to use and flexible VexCode Library that provides teams wi
 
 ## Project Goals
 
-The main goal of ART is to allow newer teams to explore and apply several of the powerful features commonly used within the Vex Robotics Competiton. Alongside the library itself, a major goal is to creat sufficient documentation and explanation for teams to fully understand the concepts they a are utilizing in thier code. This allows competitors to utilize the library for competition while abiding to \<G2\> (V5RC is a student-centered program) and allows them to grow thier knowledge and apply it outside of VRC.
+The main goal of ART is to allow newer teams to explore and apply several of the powerful features commonly used within the Vex Robotics Competiton. Alongside the library itself, a major goal is to create sufficient documentation and explanation for teams to fully understand the concepts they are utilizing in thier code. This allows competitors to utilize the library for competition while abiding to \<G2\> (V5RC is a student-centered program) and allows them to grow thier knowledge and apply it outside of VRC.
 
 Aside from that, ART is also just a way to *finally* publish code that I've been putting off for the last couple years. Most of the first few versions of ART will be classes and features I developed for competition on various Astrobots teams over the past few years. After that, I hope to develop additional features and systems based on feedback from the community, allowing me to prioritize features that the community deems useful.
 
