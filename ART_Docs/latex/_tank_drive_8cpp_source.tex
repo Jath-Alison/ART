@@ -1,0 +1,49 @@
+\doxysection{Tank\+Drive.\+cpp}
+\hypertarget{_tank_drive_8cpp_source}{}\label{_tank_drive_8cpp_source}\index{src/ART/TankDrive.cpp@{src/ART/TankDrive.cpp}}
+\mbox{\hyperlink{_tank_drive_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_tank_drive_8h}{ART/TankDrive.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00018}00018\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceart}{art}}}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00019}00019\ \{}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00020}\mbox{\hyperlink{classart_1_1_tank_drive_a18cd9067c9a838bec9a8ea9b19305022}{00020}}\ \ \ \ \ \mbox{\hyperlink{classart_1_1_tank_drive_a18cd9067c9a838bec9a8ea9b19305022}{TankDrive::TankDrive}}(vex::motor\_group\ left,\ vex::motor\_group\ right)\ :\ m\_left(left),\ m\_right(right)\ \{\}}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00022}\mbox{\hyperlink{classart_1_1_tank_drive_a355358a4b5ce6b65d8a125eaf066e293}{00022}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classart_1_1_tank_drive_a355358a4b5ce6b65d8a125eaf066e293}{TankDrive::arcade}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y,\ \textcolor{keywordtype}{double}\ rot)}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00023}00023\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classart_1_1_tank_drive_a7110637d304a34da961a56240675c9e8}{m\_cmdX}}\ =\ x;}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classart_1_1_tank_drive_a14a0d1f39f6bdcdc5e56c82c43be6b40}{m\_cmdY}}\ =\ y;}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classart_1_1_tank_drive_a68bf8d71bbc7ca4aa9fe351f7f325380}{m\_cmdRot}}\ =\ rot;}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classart_1_1_tank_drive_a4672da553236966d1716a552523ddc28}{update}}();}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00029}\mbox{\hyperlink{classart_1_1_tank_drive_ae1fa7cc9b918b1b9ce2700ecf97196af}{00029}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classart_1_1_tank_drive_a355358a4b5ce6b65d8a125eaf066e293}{TankDrive::arcade}}(\textcolor{keywordtype}{double}\ drive,\ \textcolor{keywordtype}{double}\ rot)}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00030}00030\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classart_1_1_tank_drive_a14a0d1f39f6bdcdc5e56c82c43be6b40}{m\_cmdY}}\ =\ drive;}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classart_1_1_tank_drive_a68bf8d71bbc7ca4aa9fe351f7f325380}{m\_cmdRot}}\ =\ rot;}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classart_1_1_tank_drive_a4672da553236966d1716a552523ddc28}{update}}();}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00035}\mbox{\hyperlink{classart_1_1_tank_drive_a3d3bd0c95e07d1604dbe39e152714b69}{00035}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classart_1_1_tank_drive_a3d3bd0c95e07d1604dbe39e152714b69}{TankDrive::tank}}(\textcolor{keywordtype}{double}\ left,\ \textcolor{keywordtype}{double}\ right)\{}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classart_1_1_tank_drive_a14a0d1f39f6bdcdc5e56c82c43be6b40}{m\_cmdY}}\ =\ left\ +\ right;}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classart_1_1_tank_drive_a68bf8d71bbc7ca4aa9fe351f7f325380}{m\_cmdRot}}\ =\ left\ -\/\ right;}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classart_1_1_tank_drive_a4672da553236966d1716a552523ddc28}{update}}();}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00041}\mbox{\hyperlink{classart_1_1_tank_drive_a29e11d6dfedf6354e39f465204a3cb1a}{00041}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classart_1_1_tank_drive_a29e11d6dfedf6354e39f465204a3cb1a}{TankDrive::LeftSplitArcade}}(\textcolor{keyword}{const}\ vex::controller\ \&cont)}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00042}00042\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classart_1_1_tank_drive_a355358a4b5ce6b65d8a125eaf066e293}{arcade}}(cont.Axis3.position(),\ cont.Axis1.position());}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classart_1_1_tank_drive_a4672da553236966d1716a552523ddc28}{update}}();}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00045}00045\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00046}\mbox{\hyperlink{classart_1_1_tank_drive_afbaccfb1af38855e56e6a0e372f4e4c8}{00046}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classart_1_1_tank_drive_afbaccfb1af38855e56e6a0e372f4e4c8}{TankDrive::LeftSplitArcadeCurved}}(\textcolor{keyword}{const}\ vex::controller\ \&cont)}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00047}00047\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classart_1_1_tank_drive_a355358a4b5ce6b65d8a125eaf066e293}{arcade}}(cont.Axis3.position()\ *\ cont.Axis3.position()\ *\ cont.Axis3.position()\ *\ 0.01\ *\ 0.01,}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cont.Axis1.position()\ *\ cont.Axis1.position()\ *\ cont.Axis1.position()\ *\ 0.01\ *\ 0.01);}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classart_1_1_tank_drive_a4672da553236966d1716a552523ddc28}{update}}();}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00052}\mbox{\hyperlink{classart_1_1_tank_drive_a4672da553236966d1716a552523ddc28}{00052}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classart_1_1_tank_drive_a4672da553236966d1716a552523ddc28}{TankDrive::update}}()}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00053}00053\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classart_1_1_tank_drive_a06de2d3fc5f5cce5f19bd04f6893fb30}{m\_left}}.\mbox{\hyperlink{classart_1_1_simple_motor_group_a024074f087b1bc7d0fc5c85ba05356e5}{set}}(\mbox{\hyperlink{classart_1_1_tank_drive_a14a0d1f39f6bdcdc5e56c82c43be6b40}{m\_cmdY}}\ +\ \mbox{\hyperlink{classart_1_1_tank_drive_a68bf8d71bbc7ca4aa9fe351f7f325380}{m\_cmdRot}});}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classart_1_1_tank_drive_a3e42a4536b16270a1778bf329bd974e8}{m\_right}}.\mbox{\hyperlink{classart_1_1_simple_motor_group_a024074f087b1bc7d0fc5c85ba05356e5}{set}}(\mbox{\hyperlink{classart_1_1_tank_drive_a14a0d1f39f6bdcdc5e56c82c43be6b40}{m\_cmdY}}\ -\/\ \mbox{\hyperlink{classart_1_1_tank_drive_a68bf8d71bbc7ca4aa9fe351f7f325380}{m\_cmdRot}});}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_tank_drive_8cpp_source_l00057}00057\ \}\ \textcolor{comment}{//\ namespace\ art}}
+
+\end{DoxyCode}
