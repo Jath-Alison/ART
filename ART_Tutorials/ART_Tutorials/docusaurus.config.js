@@ -6,10 +6,10 @@
 
 import {themes as prismThemes} from 'prism-react-renderer';
 
-/* * @type {import('@docusaurus/types').Config} */
+/** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'ART_Tutorials',
-  tagline: 'A Work of ART',
+  title: 'My Site',
+  tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -20,8 +20,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Jath-Alison', // Usually your GitHub org/user name.
-  projectName: 'ART', // Usually your repo name.
+  organizationName: 'facebook', // Usually your GitHub org/user name.
+  projectName: 'docusaurus', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
