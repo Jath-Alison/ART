@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkart_tutorials=self.webpackChunkart_tutorials||[]).push([[6840],{4397:t=>{t.exports=JSON.parse('{"metadata":{"permalink":"/ART/ART_Tutorials/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
