@@ -1,5 +1,0 @@
-var searchData=
-[
-  ['x_0',['x',['../structart_1_1_vec2.html#a3cd8965b5fd43b914a14f338304d4d4d',1,'art::Vec2']]],
-  ['xandy_1',['XandY',['../structart_1_1_vec2.html#af50211a750d761ec012de718bf5dfff0',1,'art::Vec2']]]
-];
