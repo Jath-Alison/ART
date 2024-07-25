@@ -1,7 +1,7 @@
 import React from 'react';
 // Import the original mapper
 import MDXComponents from '@theme-original/MDXComponents';
-import Highlight from '@site/src/components/Highlight';
+import Highlight from '@site/src/components/HomepageFeatures/Highlight';
 
 export default {
   // Re-use the default mapping
