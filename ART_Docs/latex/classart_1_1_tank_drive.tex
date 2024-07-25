@@ -1,0 +1,299 @@
+\doxysection{art\+::Tank\+Drive Class Reference}
+\hypertarget{classart_1_1_tank_drive}{}\label{classart_1_1_tank_drive}\index{art::TankDrive@{art::TankDrive}}
+
+
+A Simple \doxylink{classart_1_1_tank_drive}{Tank\+Drive} class.  
+
+
+
+
+{\ttfamily \#include $<$Tank\+Drive.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classart_1_1_tank_drive_a18cd9067c9a838bec9a8ea9b19305022}{Tank\+Drive}} (vex\+::motor\+\_\+group left, vex\+::motor\+\_\+group right)
+\begin{DoxyCompactList}\small\item\em Construct a new Tank Drive object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classart_1_1_tank_drive_a355358a4b5ce6b65d8a125eaf066e293}{arcade}} (double x, double y, double rot)
+\begin{DoxyCompactList}\small\item\em Commands the \doxylink{classart_1_1_tank_drive}{Tank\+Drive} using arcade inputs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classart_1_1_tank_drive_ae1fa7cc9b918b1b9ce2700ecf97196af}{arcade}} (double drive, double rot)
+\begin{DoxyCompactList}\small\item\em Commands the \doxylink{classart_1_1_tank_drive}{Tank\+Drive} using Tank-\/only arcade inputs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classart_1_1_tank_drive_a3d3bd0c95e07d1604dbe39e152714b69}{tank}} (double left, double right)
+\begin{DoxyCompactList}\small\item\em Commands the \doxylink{classart_1_1_tank_drive}{Tank\+Drive} using tank inputs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classart_1_1_tank_drive_a29e11d6dfedf6354e39f465204a3cb1a}{Left\+Split\+Arcade}} (const vex\+::controller \&cont)
+\begin{DoxyCompactList}\small\item\em Commands the \doxylink{classart_1_1_tank_drive}{Tank\+Drive} using arcade inputs directly from a controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classart_1_1_tank_drive_afbaccfb1af38855e56e6a0e372f4e4c8}{Left\+Split\+Arcade\+Curved}} (const vex\+::controller \&cont)
+\begin{DoxyCompactList}\small\item\em Commands the \doxylink{classart_1_1_tank_drive}{Tank\+Drive} using arcade inputs directly from a controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classart_1_1_tank_drive_a4672da553236966d1716a552523ddc28}{update}} ()
+\begin{DoxyCompactList}\small\item\em Uses the stored commands to command the motors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classart_1_1_simple_motor_group}{Simple\+Motor\+Group}} \mbox{\hyperlink{classart_1_1_tank_drive_a06de2d3fc5f5cce5f19bd04f6893fb30}{m\+\_\+left}}
+\begin{DoxyCompactList}\small\item\em a \doxylink{classart_1_1_simple_motor_group}{Simple\+Motor\+Group} for the left side \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classart_1_1_simple_motor_group}{Simple\+Motor\+Group}} \mbox{\hyperlink{classart_1_1_tank_drive_a3e42a4536b16270a1778bf329bd974e8}{m\+\_\+right}}
+\begin{DoxyCompactList}\small\item\em a \doxylink{classart_1_1_simple_motor_group}{Simple\+Motor\+Group} for the right side \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classart_1_1_tank_drive_a7110637d304a34da961a56240675c9e8}{m\+\_\+cmdX}} \{0\}
+\begin{DoxyCompactList}\small\item\em The Stored command for the X-\/direction. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classart_1_1_tank_drive_a14a0d1f39f6bdcdc5e56c82c43be6b40}{m\+\_\+cmdY}} \{0\}
+\begin{DoxyCompactList}\small\item\em The Stored command for the Y-\/direction. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classart_1_1_tank_drive_a68bf8d71bbc7ca4aa9fe351f7f325380}{m\+\_\+cmd\+Rot}} \{0\}
+\begin{DoxyCompactList}\small\item\em The Stored command for rotation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A Simple \doxylink{classart_1_1_tank_drive}{Tank\+Drive} class. 
+
+The aim of the \doxylink{classart_1_1_tank_drive}{Tank\+Drive} class is to package low-\/level tank controls to be called both during directly to drive and by other classes to allow for more complex functions. The Smart\+Drive class for example, expands on the functionality of the \doxylink{classart_1_1_tank_drive}{Tank\+Drive} by using the basic functions to perform more complex maneuvers.
+
+The \doxylink{classart_1_1_tank_drive}{Tank\+Drive} can be commanded through several different functions. These commands are stored and used to command the motors. However, the benefit of storing these commands rather than directly commanding the motors is that 1) they can be accessed later and 2) they don\textquotesingle{}t cap out at a maximum value. This gives the ability to pass whatever commands you wish as when the motor commands are calculated, one of the commands can be overwritten if the other is more significant. For example, if a small turn input is paired with a large drive input (greater than 100), the drive input can cause the rotation input to be insignificant.
+
+Commands are percentages of the max voltage(12). The left of the robot takes the sum of the drive and turn inputs, while the right takes the difference. Thus, the motor command can exceed 100(or -\/100), which would just make the motor move at 100 percent. Commanding more than that doesn\textquotesingle{}t change anything, but because the commands are added, commanding more than a 100 percent means that the command can remain past 100 even after adding the turn command.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000005}{Todo}}]add a way to enable speed\+Mode 
+
+add a method to retain proportionality between inputs 
+
+add getters for stuff 
+
+add curvature control scheme 
+
+provide several other preset control schemes \end{DoxyRefDesc}
+
+
+Definition at line \mbox{\hyperlink{_tank_drive_8h_source_l00053}{53}} of file \mbox{\hyperlink{_tank_drive_8h_source}{Tank\+Drive.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classart_1_1_tank_drive_a18cd9067c9a838bec9a8ea9b19305022}\index{art::TankDrive@{art::TankDrive}!TankDrive@{TankDrive}}
+\index{TankDrive@{TankDrive}!art::TankDrive@{art::TankDrive}}
+\doxysubsubsection{\texorpdfstring{TankDrive()}{TankDrive()}}
+{\footnotesize\ttfamily \label{classart_1_1_tank_drive_a18cd9067c9a838bec9a8ea9b19305022} 
+art\+::\+Tank\+Drive\+::\+Tank\+Drive (\begin{DoxyParamCaption}\item[{vex\+::motor\+\_\+group}]{left}{, }\item[{vex\+::motor\+\_\+group}]{right}{}\end{DoxyParamCaption})}
+
+
+
+Construct a new Tank Drive object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & a motor\+\_\+group for the left side \\
+\hline
+{\em right} & a motor\+\_\+group for the right side\\
+\hline
+\end{DoxyParams}
+The \doxylink{classart_1_1_tank_drive}{Tank\+Drive} class requires 2 vex\+::motor\+\_\+groups, one for each side. 
+
+Definition at line \mbox{\hyperlink{_tank_drive_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{_tank_drive_8cpp_source}{Tank\+Drive.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classart_1_1_tank_drive_ae1fa7cc9b918b1b9ce2700ecf97196af}\index{art::TankDrive@{art::TankDrive}!arcade@{arcade}}
+\index{arcade@{arcade}!art::TankDrive@{art::TankDrive}}
+\doxysubsubsection{\texorpdfstring{arcade()}{arcade()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{classart_1_1_tank_drive_ae1fa7cc9b918b1b9ce2700ecf97196af} 
+void art\+::\+Tank\+Drive\+::arcade (\begin{DoxyParamCaption}\item[{double}]{drive}{, }\item[{double}]{rot}{}\end{DoxyParamCaption})}
+
+
+
+Commands the \doxylink{classart_1_1_tank_drive}{Tank\+Drive} using Tank-\/only arcade inputs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em drive} & the command for the Y-\/direcction(driving) \\
+\hline
+{\em rot} & the command for rotation(turning\\
+\hline
+\end{DoxyParams}
+A modified arcade method to remove the ignored x-\/input. 
+
+Definition at line \mbox{\hyperlink{_tank_drive_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{_tank_drive_8cpp_source}{Tank\+Drive.\+cpp}}.
+
+\Hypertarget{classart_1_1_tank_drive_a355358a4b5ce6b65d8a125eaf066e293}\index{art::TankDrive@{art::TankDrive}!arcade@{arcade}}
+\index{arcade@{arcade}!art::TankDrive@{art::TankDrive}}
+\doxysubsubsection{\texorpdfstring{arcade()}{arcade()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{classart_1_1_tank_drive_a355358a4b5ce6b65d8a125eaf066e293} 
+void art\+::\+Tank\+Drive\+::arcade (\begin{DoxyParamCaption}\item[{double}]{x}{, }\item[{double}]{y}{, }\item[{double}]{rot}{}\end{DoxyParamCaption})}
+
+
+
+Commands the \doxylink{classart_1_1_tank_drive}{Tank\+Drive} using arcade inputs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the command for the X-\/direction(the \doxylink{classart_1_1_tank_drive}{Tank\+Drive} ignores this input) \\
+\hline
+{\em y} & the command for the Y-\/direcction(driving) \\
+\hline
+{\em rot} & the command for rotation(turning)\\
+\hline
+\end{DoxyParams}
+Because Tank\+Drives don\textquotesingle{}t have wheels powered in the X-\/direction, the X-\/input is ignored. The reason this function still accepts it is because there were originally plans to include several other drive types, but were never fully fleshed out, leaving an extra input that is currently unused. 
+
+Definition at line \mbox{\hyperlink{_tank_drive_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{_tank_drive_8cpp_source}{Tank\+Drive.\+cpp}}.
+
+\Hypertarget{classart_1_1_tank_drive_a29e11d6dfedf6354e39f465204a3cb1a}\index{art::TankDrive@{art::TankDrive}!LeftSplitArcade@{LeftSplitArcade}}
+\index{LeftSplitArcade@{LeftSplitArcade}!art::TankDrive@{art::TankDrive}}
+\doxysubsubsection{\texorpdfstring{LeftSplitArcade()}{LeftSplitArcade()}}
+{\footnotesize\ttfamily \label{classart_1_1_tank_drive_a29e11d6dfedf6354e39f465204a3cb1a} 
+void art\+::\+Tank\+Drive\+::\+Left\+Split\+Arcade (\begin{DoxyParamCaption}\item[{const vex\+::controller \&}]{cont}{}\end{DoxyParamCaption})}
+
+
+
+Commands the \doxylink{classart_1_1_tank_drive}{Tank\+Drive} using arcade inputs directly from a controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cont} & a refrence to a controller object\\
+\hline
+\end{DoxyParams}
+This method simply provides a pre-\/set control scheme using a controller as an input. The commands are passed directly from the joysticks to the arcade function.
+
+The Left Joystick\textquotesingle{}s vertical axis(\+Axis3) is mapped to driving and the Right Joystick\textquotesingle{}s horizontal Axis(\+Axis1) is mapped to turning. 
+
+Definition at line \mbox{\hyperlink{_tank_drive_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{_tank_drive_8cpp_source}{Tank\+Drive.\+cpp}}.
+
+\Hypertarget{classart_1_1_tank_drive_afbaccfb1af38855e56e6a0e372f4e4c8}\index{art::TankDrive@{art::TankDrive}!LeftSplitArcadeCurved@{LeftSplitArcadeCurved}}
+\index{LeftSplitArcadeCurved@{LeftSplitArcadeCurved}!art::TankDrive@{art::TankDrive}}
+\doxysubsubsection{\texorpdfstring{LeftSplitArcadeCurved()}{LeftSplitArcadeCurved()}}
+{\footnotesize\ttfamily \label{classart_1_1_tank_drive_afbaccfb1af38855e56e6a0e372f4e4c8} 
+void art\+::\+Tank\+Drive\+::\+Left\+Split\+Arcade\+Curved (\begin{DoxyParamCaption}\item[{const vex\+::controller \&}]{cont}{}\end{DoxyParamCaption})}
+
+
+
+Commands the \doxylink{classart_1_1_tank_drive}{Tank\+Drive} using arcade inputs directly from a controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cont} & a refrence to a controller object\\
+\hline
+\end{DoxyParams}
+This method simply provides a pre-\/set control scheme using a controller as an input. The commands from the joysticks are cubed and divided by 10,000 before being passed to the arcade function. This results in an input curve that decreases lower values, decreasing the sensitivity of inputs and making it easier to drive slow.
+
+The Left Joystick\textquotesingle{}s vertical axis(\+Axis3) is mapped to driving and the Right Joystick\textquotesingle{}s horizontal Axis(\+Axis1) is mapped to turning.
+
+For example, an input of 80 from the controller only leads to an output of \texorpdfstring{$\sim$}{\string~}50 percent. While an input of 50 leads to an output of only \texorpdfstring{$\sim$}{\string~}12 percent.
+
+ 
+
+Definition at line \mbox{\hyperlink{_tank_drive_8cpp_source_l00046}{46}} of file \mbox{\hyperlink{_tank_drive_8cpp_source}{Tank\+Drive.\+cpp}}.
+
+\Hypertarget{classart_1_1_tank_drive_a3d3bd0c95e07d1604dbe39e152714b69}\index{art::TankDrive@{art::TankDrive}!tank@{tank}}
+\index{tank@{tank}!art::TankDrive@{art::TankDrive}}
+\doxysubsubsection{\texorpdfstring{tank()}{tank()}}
+{\footnotesize\ttfamily \label{classart_1_1_tank_drive_a3d3bd0c95e07d1604dbe39e152714b69} 
+void art\+::\+Tank\+Drive\+::tank (\begin{DoxyParamCaption}\item[{double}]{left}{, }\item[{double}]{right}{}\end{DoxyParamCaption})}
+
+
+
+Commands the \doxylink{classart_1_1_tank_drive}{Tank\+Drive} using tank inputs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & the command for the left motors \\
+\hline
+{\em right} & the command for the right motors\\
+\hline
+\end{DoxyParams}
+Internally, the 2 inputs are simply used to calculate the y and rot commands. The notes on commands past 100 in the class description remains true for these calculated inputs. 
+
+Definition at line \mbox{\hyperlink{_tank_drive_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{_tank_drive_8cpp_source}{Tank\+Drive.\+cpp}}.
+
+\Hypertarget{classart_1_1_tank_drive_a4672da553236966d1716a552523ddc28}\index{art::TankDrive@{art::TankDrive}!update@{update}}
+\index{update@{update}!art::TankDrive@{art::TankDrive}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{classart_1_1_tank_drive_a4672da553236966d1716a552523ddc28} 
+void art\+::\+Tank\+Drive\+::update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Uses the stored commands to command the motors. 
+
+Originally, this had use to actually command the motors, but now each method internally calls update, so this just remains here, as it was part of a shared interface between periodically updating objects. Essentially, it does nothing notable and should be ignored. 
+
+Definition at line \mbox{\hyperlink{_tank_drive_8cpp_source_l00052}{52}} of file \mbox{\hyperlink{_tank_drive_8cpp_source}{Tank\+Drive.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classart_1_1_tank_drive_a68bf8d71bbc7ca4aa9fe351f7f325380}\index{art::TankDrive@{art::TankDrive}!m\_cmdRot@{m\_cmdRot}}
+\index{m\_cmdRot@{m\_cmdRot}!art::TankDrive@{art::TankDrive}}
+\doxysubsubsection{\texorpdfstring{m\_cmdRot}{m\_cmdRot}}
+{\footnotesize\ttfamily \label{classart_1_1_tank_drive_a68bf8d71bbc7ca4aa9fe351f7f325380} 
+double art\+::\+Tank\+Drive\+::m\+\_\+cmd\+Rot \{0\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The Stored command for rotation. 
+
+The command is a positive or negative percentage, but can exceed 100 as well. Doing so will make the command more significant in calculations with the other commands. 
+
+Definition at line \mbox{\hyperlink{_tank_drive_8h_source_l00200}{200}} of file \mbox{\hyperlink{_tank_drive_8h_source}{Tank\+Drive.\+h}}.
+
+\Hypertarget{classart_1_1_tank_drive_a7110637d304a34da961a56240675c9e8}\index{art::TankDrive@{art::TankDrive}!m\_cmdX@{m\_cmdX}}
+\index{m\_cmdX@{m\_cmdX}!art::TankDrive@{art::TankDrive}}
+\doxysubsubsection{\texorpdfstring{m\_cmdX}{m\_cmdX}}
+{\footnotesize\ttfamily \label{classart_1_1_tank_drive_a7110637d304a34da961a56240675c9e8} 
+double art\+::\+Tank\+Drive\+::m\+\_\+cmdX \{0\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The Stored command for the X-\/direction. 
+
+The command is a positive or negative percentage, but can exceed 100 as well. Doing so will make the command more significant in calculations with the other commands.
+
+Because Tank\+Drives can\textquotesingle{}t drive in the X-\/direction, this command is ignored. 
+
+Definition at line \mbox{\hyperlink{_tank_drive_8h_source_l00184}{184}} of file \mbox{\hyperlink{_tank_drive_8h_source}{Tank\+Drive.\+h}}.
+
+\Hypertarget{classart_1_1_tank_drive_a14a0d1f39f6bdcdc5e56c82c43be6b40}\index{art::TankDrive@{art::TankDrive}!m\_cmdY@{m\_cmdY}}
+\index{m\_cmdY@{m\_cmdY}!art::TankDrive@{art::TankDrive}}
+\doxysubsubsection{\texorpdfstring{m\_cmdY}{m\_cmdY}}
+{\footnotesize\ttfamily \label{classart_1_1_tank_drive_a14a0d1f39f6bdcdc5e56c82c43be6b40} 
+double art\+::\+Tank\+Drive\+::m\+\_\+cmdY \{0\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The Stored command for the Y-\/direction. 
+
+The command is a positive or negative percentage, but can exceed 100 as well. Doing so will make the command more significant in calculations with the other commands. 
+
+Definition at line \mbox{\hyperlink{_tank_drive_8h_source_l00192}{192}} of file \mbox{\hyperlink{_tank_drive_8h_source}{Tank\+Drive.\+h}}.
+
+\Hypertarget{classart_1_1_tank_drive_a06de2d3fc5f5cce5f19bd04f6893fb30}\index{art::TankDrive@{art::TankDrive}!m\_left@{m\_left}}
+\index{m\_left@{m\_left}!art::TankDrive@{art::TankDrive}}
+\doxysubsubsection{\texorpdfstring{m\_left}{m\_left}}
+{\footnotesize\ttfamily \label{classart_1_1_tank_drive_a06de2d3fc5f5cce5f19bd04f6893fb30} 
+\mbox{\hyperlink{classart_1_1_simple_motor_group}{Simple\+Motor\+Group}} art\+::\+Tank\+Drive\+::m\+\_\+left\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+a \doxylink{classart_1_1_simple_motor_group}{Simple\+Motor\+Group} for the left side 
+
+Currently, there is no way to access this \doxylink{classart_1_1_simple_motor_group}{Simple\+Motor\+Group} using the \doxylink{classart_1_1_tank_drive}{Tank\+Drive} object. However, you can still use methods on the vex\+::motor\+\_\+groups you used to contruct the \doxylink{classart_1_1_tank_drive}{Tank\+Drive} object. Telling those motor groups to spin will likely cause undefined behaviour though. 
+
+Definition at line \mbox{\hyperlink{_tank_drive_8h_source_l00163}{163}} of file \mbox{\hyperlink{_tank_drive_8h_source}{Tank\+Drive.\+h}}.
+
+\Hypertarget{classart_1_1_tank_drive_a3e42a4536b16270a1778bf329bd974e8}\index{art::TankDrive@{art::TankDrive}!m\_right@{m\_right}}
+\index{m\_right@{m\_right}!art::TankDrive@{art::TankDrive}}
+\doxysubsubsection{\texorpdfstring{m\_right}{m\_right}}
+{\footnotesize\ttfamily \label{classart_1_1_tank_drive_a3e42a4536b16270a1778bf329bd974e8} 
+\mbox{\hyperlink{classart_1_1_simple_motor_group}{Simple\+Motor\+Group}} art\+::\+Tank\+Drive\+::m\+\_\+right\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+a \doxylink{classart_1_1_simple_motor_group}{Simple\+Motor\+Group} for the right side 
+
+Currently, there is no way to access this \doxylink{classart_1_1_simple_motor_group}{Simple\+Motor\+Group} using the \doxylink{classart_1_1_tank_drive}{Tank\+Drive} object. However, you can still use methods on the vex\+::motor\+\_\+groups you used to contruct the \doxylink{classart_1_1_tank_drive}{Tank\+Drive} object. Telling those motor groups to spin will likely cause undefined behaviour though. 
+
+Definition at line \mbox{\hyperlink{_tank_drive_8h_source_l00173}{173}} of file \mbox{\hyperlink{_tank_drive_8h_source}{Tank\+Drive.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+ART/\mbox{\hyperlink{_tank_drive_8h}{Tank\+Drive.\+h}}\item 
+src/\+ART/\mbox{\hyperlink{_tank_drive_8cpp}{Tank\+Drive.\+cpp}}\end{DoxyCompactItemize}
