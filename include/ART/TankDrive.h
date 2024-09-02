@@ -12,6 +12,7 @@
  * to write driver control code as well as autons by providing the low level
  * controls for more complex functions to use.
  */
+#pragma once
 
 #include "ART/SimpleMotorGroup.h"
 

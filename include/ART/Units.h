@@ -13,6 +13,7 @@
  * be used and converted rather than writing seperate functions for different
  * units.
  */
+#pragma once
 
 namespace art
 {
