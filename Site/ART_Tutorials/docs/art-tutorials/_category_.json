@@ -1,0 +1,8 @@
+{
+  "label": "ART Tutorials",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Guides on how ART works and how to use it"
+  }
+}
