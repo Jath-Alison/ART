@@ -4,7 +4,7 @@
  * @brief Source containing several Unit classes
  * @version 0.1
  * @date 07-13-2024
- * 
+ *
  * @copyright Copyright (c) 2024
  *
  * This is the source defining various Unit classes. The classes aim to aid in
@@ -163,25 +163,48 @@ namespace art
 
     Angle::operator double()
     {
-        //constrain();
+        // constrain();
         return m_value;
     }
 
     double Angle::degrees()
     {
-        //constrain();
+        // constrain();
         return m_value * 180 / 3.14159265f;
     }
 
     double Angle::radians()
     {
-        //constrain();
+        // constrain();
         return m_value;
     }
 
     double Angle::revolutions()
     {
-        //constrain();
+        // constrain();
         return m_value / (3.14159265f * 2.f);
     }
-}// namespace art
+
+    Angle shortestTurnPath(const Angle target)
+    {
+        Angle angle = target;
+        angle.constrain();
+        if (std::abs(angle.revolutions()) < .5)
+        {
+            return angle;
+        }
+        else
+        {
+            if (angle.revolutions() > 0)
+            {
+                return Revolutions(1 - angle.revolutions());
+            }
+            else
+            {
+                return Revolutions(1 + angle.revolutions());
+            }
+        }
+        return Angle();
+    }
+
+} // namespace art
