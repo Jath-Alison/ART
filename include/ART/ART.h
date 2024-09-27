@@ -16,3 +16,8 @@
 
 #include "ART/SimpleMotor.h"
 #include "ART/SimpleMotorGroup.h"
+#include "ART/PID.h"
+#include "ART/Units.h"
+#include "ART/Vec2.h"
+#include "ART/TankDrive.h"
+#include "ART/SmartDrive.h"
