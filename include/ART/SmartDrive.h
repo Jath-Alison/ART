@@ -15,10 +15,12 @@
 #pragma once
 
 #include "ART/Vec2.h"
+#include "ART/PID.h"
 #include "ART/Units.h"
 #include "ART/TankDrive.h"
 
 #include <memory>
+#include <cmath>
 
 namespace art
 {
@@ -95,14 +97,14 @@ namespace art
          *
          * Sets the gear ratio which can be calculated using (output teeth#)/(input teeth#). Because
          * it returns a reference to the SmartDrive object, other methods can be chained to the end
-         * of this one, or the result can be stored into a SmartDrive object. 
+         * of this one, or the result can be stored into a SmartDrive object.
          * Look at withWheelSize() for an example of this.
          *
          * It is advised to simply type out both tooth counts in the constructor, like
          * `60.0/36.0`. Note the ".0" added to each number to ensure that the result is a double
          * and not an integer. If it converts to an integer, then all the decimal places will be
          * truncated and the odometry will not work.
-         * 
+         *
          * The gear ratio (@ref m_gearRatio "m_gearRatio") is only used for odometry, so it isn't necessary if you
          * don't care for odometry. However, it is also one of 2 requirements for basic odometry
          * (withWheelSize()), so it can be useful, as the data on the position will be at least
@@ -110,19 +112,74 @@ namespace art
          */
         SmartDrive &withGearRatio(double ratio);
 
+        /**
+         * @brief Add Horizontal Tracker to the SmartDrive
+         *
+         * @param rotation a rotation sensor to use for tracking
+         * @param wheelSize a Length object representing the diameter of the wheel
+         * @param gearRatio a double representing the ratio of output to input gears(output/input)
+         * @return SmartDrive& a reference to the SmartDrive
+         *
+         * While the HorizontalTracker is store privately in the SmartDrive class, one can be added
+         * to the SmartDrive by calling this method. It is recommended to attach this to the end of
+         * the constructor, like so:
+         *
+         * @code {.cpp}
+         * art::SmartDrive smart = art::SmartDrive( drive, inert )
+         *  .withWheelSize(art::Inches(2.75))
+         *  .withHorizontalTracker(
+         *       vex::rotation(vex::PORT2, true),
+         *       art::Inches(2.75),
+         *       3.f/5.f
+         *  );
+         * @endcode
+         *
+         * @see HorizontalTracker(vex::rotation rotation, Length wheelSize, double gearRatio)
+         * HorizontalTracker(vex::rotation rotation, Length wheelSize, double gearRatio, Length wheelOffset)
+         *
+         */
         SmartDrive &withHorizontalTracker(vex::rotation rotation, Length wheelSize, double gearRatio);
+
+        /**
+         * @brief Add a Horizontal Tracker to the SmartDrive with a wheel offset
+         *
+         * @param rotation a rotation sensor to use for tracking
+         * @param wheelSize a Length object representing the diameter of the wheel
+         * @param gearRatio a double representing the ratio of output to input gears(output/input)
+         * @param wheelOffset a Length object representing the vertical distance from horizontal
+         * tracker to the tracking center (positive is toward the front of the robot)
+         * @return SmartDrive& a reference to the SmartDrive
+         *
+         * While the HorizontalTracker is store privately in the SmartDrive class, one can be added
+         * to the SmartDrive by calling this method. It is recommended to attach this to the end of
+         * the constructor, like so:
+         *
+         * @code {.cpp}
+         * art::SmartDrive smart = art::SmartDrive( drive, inert )
+         *  .withWheelSize(art::Inches(2.75))
+         *  .withHorizontalTracker(
+         *       vex::rotation(vex::PORT2, true),
+         *       art::Inches(2.75),
+         *       3.f/5.f,
+         *       art::Inches(1.5)
+         *  );
+         * @endcode
+         *
+         * @see HorizontalTracker(vex::rotation rotation, Length wheelSize, double gearRatio, Length wheelOffset)
+         *
+         */
         SmartDrive &withHorizontalTracker(vex::rotation rotation, Length wheelSize, double gearRatio, Length wheelOffset);
 
         /**
          * @brief Continuously tracks and updates the position of the SmartDrive
-         * 
+         *
          * @return int runs infinitely and will only return 0 when the task ends
-         * 
+         *
          * This method exists to run in the background and update the position of the SmartDrive
          * while other things are happening. In order to do this, a <a
          * href="https://api.vex.com/v5/home/cpp/Thread.html">vex::thread</a> should be created
          * when you want tracking to start.
-         * 
+         *
          * Warning:
          * Calling this somewhere else will cause the code to become stuck within this method and
          * not run anything else. Do not run this outside of a separate thread from the rest of your
@@ -130,11 +187,260 @@ namespace art
          */
         int track();
 
-        void driveTo(Length target);
-        void driveToPID(Length target);
+        /**
+         * @brief Drives for a specified distance
+         *
+         * @param target the distance to drive for
+         * @param speed the speed to drive at
+         *
+         * Utilizes the motor encoders as well as information about the wheelSize and gear ratio to
+         * travel a specified distance. Use a Length object to specify the distance in any unit. The
+         * speed is a number from -100 to 100 as a percentage of max voltage(12). Setting the speed
+         * to 100 and -100 commands the motors at 12 and -12 volts respectively.
+         *
+         * The SmartDrive will drive at this speed until it passes the target distance threshold,
+         * immediately exiting. This method is blocking, so the function where this is called will
+         * not continue until this is finished running. Keep in mind that if the speed makes the
+         * robot travel in the incorrect direction, it will never reach its target.
+         *
+         * The SmartDrive will not slow down as it approaches the target either. If you want to to
+         * stop precisely at a target distance, it may be a good idea to divide the distance into
+         * smaller chunks and slow down the latter chunks so it slows as it approaches the overall
+         * target.
+         *
+         * Example:
+         * @code {.cpp}
+         * smartDrive.driveFor(art::Length::tiles(2), 75);
+         * @endcode
+         */
+        void driveFor(Length target, double speed);
 
-        void turnTo(Angle target);
+        /**
+         * @brief Drives for a specified distance (and stops)
+         *
+         * @param target the distance to drive for
+         *
+         * Performs a similar function to driveFor(), but utilizes a PID loop to better control the
+         * SmartDrive's motion. Assuming the PID is tuned correctly, the SmartDrive will slow down
+         * and stop at the target distance. Both the speed and direction will be calculated to reach
+         * this distance.
+         *
+         * To see how the PID runs, take a look at the PID class.
+         *
+         * The PID object for this method can be configured by modifying @ref driveForPID.
+         */
+        void driveForPID(Length target);
+
+        /**
+         * @brief The PID object for the @ref driveFor Method
+         *
+         * Modifying this PID object will change how @ref driveFor works.
+         *
+         * Wherever you configure your robot, it is recommended to configure this as well. You can
+         * simply set this PID object equal to another defined PID object, but this code will need
+         * to run in the pre_auton or main functions. To put it with the rest of the Robot
+         * Configuration, use the withDriveForPID() method.
+         *
+         * @see PID
+         */
+        PID m_driveForPID;
+
+        /**
+         * @brief Sets the PID object for the @ref driveForPID Method
+         *
+         * @param pid the PID object to copy
+         * @return SmartDrive& a reference to the SmartDrive
+         *
+         * This method allows you to set the PID object for the @ref driveForPID method. It can be
+         * set using another PID object or one that is constructed inline like so:
+         *
+         * @code {.cpp}
+         * smartDrive.withDriveForPID(
+         *  art::PID().withConstants(3.0, 0.2, 1.0)
+         * );
+         * @endcode
+         *
+         * Take a look at the documentation for the PID class for more information on how to
+         * configure the PID object.
+         */
+        SmartDrive &withDriveForPID(PID pid);
+
+        /**
+         * @brief Turns for a specified Angle
+         *
+         * @param target the angle to turn for
+         * @param speed the speed to turn at
+         *
+         * Utilizes the inertial sensor's gyro to turn a specified Angle. Use an Angle object to
+         * specify the angler in any unit. The speed is a number from -100 to 100 as a percentage of
+         * max voltage(12). Setting the speed to 100 commands the left and right motors at 12 and -12
+         * volts respectively and -100 flips those values.
+         *
+         * The SmartDrive will turn at this speed until it passes the target angle threshold,
+         * immediately exiting. This method is blocking, so the function where this is called will
+         * not continue until this is finished running. Keep in mind that if the speed makes the
+         * robot travel in the incorrect direction, it will never reach its target.
+         *
+         * @todo Check if the robot will wrap around and stop.
+         *
+         * The SmartDrive will not slow down as it approaches the target either. If you want to to
+         * stop precisely at a target angle, it may be a good idea to divide the distance into
+         * smaller chunks and slow down the latter chunks so it slows as it approaches the overall
+         * target.
+         *
+         * Example:
+         * @code {.cpp}
+         * smartDrive.turnFor(art::Angle::Rotations(2), 75);
+         * @endcode
+         */
+        void turnFor(Angle target, double speed);
+
+        /**
+         * @brief Turns for a specified angle (and stops)
+         *
+         * @param target the angle to turn for
+         *
+         * Performs a similar function to turnFor(), but utilizes a PID loop to better control the
+         * SmartDrive's motion. Assuming the PID is tuned correctly, the SmartDrive will slow down
+         * and stop at the target Angle. Both the speed and direction will be calculated to reach
+         * this angle.
+         *
+         * To see how the PID runs, take a look at the PID class.
+         *
+         * The PID object for this method can be configured by modifying @ref turnForPID.
+         */
+        void turnForPID(Angle target);
+
+        /**
+         * @brief The PID object for the @ref turnForPID Method
+         *
+         * Modifying this PID object will change how @ref turnForPID works.
+         *
+         * Wherever you configure your robot, it is recommended to configure this as well. You can
+         * simply set this PID object equal to another defined PID object, but this code will need
+         * to run in the pre_auton or main functions. To put it with the rest of the Robot
+         * Configuration, use the withTurnForPID() method.
+         *
+         * @see PID
+         */
+        PID m_turnForPID;
+
+        /**
+         * @brief Sets the PID object for the @ref turnForPID Method
+         *
+         * @param pid the PID object to copy
+         * @return SmartDrive& a reference to the SmartDrive
+         *
+         * This method allows you to set the PID object for the @ref turnForPID method. It can be
+         * set using another PID object or one that is constructed inline like so:
+         *
+         * @code {.cpp}
+         * smartDrive.withTurnForPID(
+         *  art::PID().withConstants(3.0, 0.2, 1.0)
+         * );
+         * @endcode
+         *
+         * Take a look at the documentation for the PID class for more information on how to
+         * configure the PID object.
+         */
+        SmartDrive &withTurnForPID(PID pid);
+
+        /**
+         * @brief Turns to a specified field-centric Angle
+         *
+         * @param target the angle to turn to
+         * @param speed the speed to turn at
+         *
+         * Utilizes the inertial sensor's gyro to turn to a specified Angle on the field. Use an Angle object to
+         * specify the angler in any unit. The speed is a number from -100 to 100 as a percentage of
+         * max voltage(12). Setting the speed to 100 commands the left and right motors at 12 and -12
+         * volts respectively and -100 flips those values.
+         *
+         * The SmartDrive will turn at this speed until it falls within the target angle threshold,
+         * immediately exiting. This method is blocking, so the function where this is called will
+         * not continue until this is finished running. Keep in mind that depending the speed, the
+         * robot may rotate and reach the angle using the longer route.
+         *
+         * The Angle will be wrapped around and constrained to a circle. Therefore, even if the
+         * angle resides outside a circle, like 540 degrees, it will be wrapped around to 180
+         * degrees instead. Unless the gyro is reset or re-calibrated, the angle specified will
+         * always be relative to the initial gyro reading. Therefore, all angles will be relative to
+         * the position when the robot is powered on. It is possible to power the robot on and move
+         * it to the starting position, but if you do this, keep in mind where the starting location
+         * is set in the code and ensure the odometry is not confused by this process.
+         *
+         * The SmartDrive will not slow down as it approaches the target, so if you want to to
+         * stop precisely at a target angle, it may be a good idea to divide the turn into
+         * smaller chunks and slow down the latter chunks so it slows as it approaches the overall
+         * target.
+         *
+         * Example:
+         * @code {.cpp}
+         * smartDrive.turnTo(art::Angle::Degrees(90), 75);
+         * @endcode
+         */
+        void turnTo(Angle target, double speed);
+
+        /**
+         * @brief Turns tp a specified angle (and stops)
+         *
+         * @param target the angle to turn to
+         *
+         * Performs a similar function to turnTo(), but utilizes a PID loop to better control the
+         * SmartDrive's motion. Assuming the PID is tuned correctly, the SmartDrive will slow down
+         * and stop at the target Angle. Both the speed and direction will be calculated to reach
+         * this angle.
+         *
+         * To see how the PID runs, take a look at the PID class.
+         *
+         * The PID object for this method can be configured by modifying @ref turnToPID.
+         */
         void turnToPID(Angle target);
+
+        /**
+         * @brief The PID object for the @ref turnToPID Method
+         *
+         * Modifying this PID object will change how @ref turnToPID works.
+         *
+         * Wherever you configure your robot, it is recommended to configure this as well. You can
+         * simply set this PID object equal to another defined PID object, but this code will need
+         * to run in the pre_auton or main functions. To put it with the rest of the Robot
+         * Configuration, use the withTurnToPID() method.
+         *
+         * @see PID
+         */
+        PID m_turnToPID;
+
+        /**
+         * @brief Sets the PID object for the @ref turnToPID Method
+         *
+         * @param pid the PID object to copy
+         * @return SmartDrive& a reference to the SmartDrive
+         *
+         * This method allows you to set the PID object for the @ref turnToPID method. It can be
+         * set using another PID object or one that is constructed inline like so:
+         *
+         * @code {.cpp}
+         * smartDrive.withTurnToPID(
+         *  art::PID().withConstants(3.0, 0.2, 1.0)
+         * );
+         * @endcode
+         *
+         * Take a look at the documentation for the PID class for more information on how to
+         * configure the PID object.
+         */
+        SmartDrive &withTurnToPID(PID pid);
+
+        /**
+         * @brief Get the Travel of the wheels for one revolution of the motor 
+         * 
+         * @return Distance that would be traveled if the base motor were turned
+         * onces
+         * 
+         * Calculates and returns the distance that would be traveled if the base motor were turned
+         * once. This is used to calculate the odometry and some drive functions.
+         */
+        Length getWheelTravel();
 
     private:
         /**
@@ -350,6 +656,41 @@ namespace art
          * truncated and the odometry will not work.
          */
         double m_gearRatio{1.0};
+
+        /**
+         * @brief Gets the Angle traveled by the left motors
+         * 
+         * @return angle the angle the left motors have traveled through
+         * 
+         * Only used internally, inaccessible externally. Used for odometry and some drive
+         * functions.
+         */
+        Angle getLeftTravel();
+
+        /**
+         * @brief The last angle read from the Left motors
+         * 
+         * Used internally to calculate the travel of the motors and the base
+         */
+        Angle m_LastLeftPos;
+
+        /**
+         * @brief Gets the Angle traveled by the left motors
+         * 
+         * @return angle the angle the left motors have traveled through
+         * 
+         * Only used internally, inaccessible externally. Used for odometry and some drive
+         * functions.
+         */
+        Angle getRightTravel();
+
+        /**
+         * @brief The last angle read from the Right motors
+         * 
+         * Used internally to calculate the travel of the motors and the base
+         */
+        Angle m_LastRightPos;
+
     };
 
 } // namespace art
