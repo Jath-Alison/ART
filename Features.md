@@ -1,8 +1,9 @@
 # Features
 
-Features will be added as the season progresses and ART recieves feedback from the community.
+Features will be added as the season progresses and ART receives feedback from the community.
 
-## V1.0 (Initial Version):
+## V1.0 (Initial Version)
+
 - TankDrive wrapper class
   - Odometry
   - Several motion functions
@@ -10,7 +11,8 @@ Features will be added as the season progresses and ART recieves feedback from t
 - Vector Utility Class
 - Unit Utility Classes
 
-## Features planned for future versions:
+## Features planned for future versions
+
 - Smarter Motor Control class
 - Sensor Wrapper classes
 - Path Utility class

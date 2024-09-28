@@ -3,7 +3,9 @@
 		"${config:vexrobotics.vexcode.Cpp.Sdk.Home}\\V5\\V5_20240223_11_00_00\\vexv5\\gcc\\include\\sys"
 	],
 	"cSpell.words": [
+		"Auton",
 		"autons",
+		"JERRYIO",
 		"odometry"
 	],
 	"files.associations": {
