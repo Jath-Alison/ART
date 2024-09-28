@@ -15,6 +15,7 @@
  */
 
 #include "robotConfig.h"
+#include "ART/ART.h"
 
 vex::brain Brain;
 vex::controller Controller1;

@@ -135,10 +135,9 @@ namespace art
 
         Angle targetAngle = Degrees(target.degrees() + m_inert.rotation(vex::degrees));
 
-        int dir = std::abs(target)/target;
+        int dir = double(std::abs(target) / target);
 
-        m_turnForPID.reset();
-        while (Degrees(targetAngle.degrees() - m_inert.heading(vex::degrees)) * dir > 0)
+        while (Degrees(targetAngle.degrees() - m_inert.rotation(vex::degrees)) * dir > 0)
         {
             Angle error = Degrees(targetAngle.degrees() - m_inert.rotation(vex::degrees));
 
@@ -177,11 +176,16 @@ namespace art
         Angle error = shortestTurnPath(Degrees(target.degrees() - m_inert.heading(vex::degrees)));
         int errorSign = std::abs(error)/error;
 
-        while (!std::abs(error.degrees() < 10) && errorSign != std::abs(error)/error)
+        while (!(std::abs(error.degrees()) < 10) || errorSign == std::abs(error)/error)
         {
-            Angle error = shortestTurnPath(Degrees(target.degrees() - m_inert.heading(vex::degrees)));
+            error = shortestTurnPath(Degrees(target.degrees() - m_inert.heading(vex::degrees)));
 
             arcade(0, speed);
+            
+            if((std::abs(error.degrees()) < 5)){
+                arcade(0, 0, 0);
+                return;
+            }
 
             errorSign = std::abs(error)/error;
             wait(20, vex::msec);
@@ -208,6 +212,10 @@ namespace art
     SmartDrive &SmartDrive::withTurnToPID(PID pid){
         m_turnToPID = pid;
         return *this;
+    }
+
+    Length SmartDrive::getWheelTravel(){
+        return Length(M_PI * m_wheelSize * m_gearRatio);
     }
 
     SmartDrive::HorizontalTracker::HorizontalTracker(){}

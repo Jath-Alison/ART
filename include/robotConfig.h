@@ -17,3 +17,4 @@
 #pragma once
 
 #include "vex.h"
+#include "Art\ART.h"
