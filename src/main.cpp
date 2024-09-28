@@ -14,6 +14,9 @@
  */
 
 #include "vex.h"
+#include "robotConfig.h"
+#include "Art\ART.h"
+
 
 /**
  * @brief A global instance of competition
