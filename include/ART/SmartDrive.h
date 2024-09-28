@@ -2,7 +2,7 @@
  * @file SmartDrive.h
  * @author Jath Alison (Jath.Alison@gmail.com)
  * @brief Header containing the SmartDrive class
- * @version 0.1
+ * @version 1.0-beta
  * @date 09-01-2024
  *
  * @copyright Copyright (c) 2024

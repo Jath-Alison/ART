@@ -2,7 +2,7 @@
  * @file SmartDrive.cpp
  * @author Jath Alison (Jath.Alison@gmail.com)
  * @brief Source containing the SmartDrive class
- * @version 0.1
+ * @version 1.0-beta
  * @date 09-25-2024
  *
  * @copyright Copyright (c) 2024

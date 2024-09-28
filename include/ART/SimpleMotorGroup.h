@@ -2,7 +2,7 @@
  * @file SimpleMotorGroup.h
  * @author Jath Alison (Jath.Alison@gmail.com)
  * @brief Header containing a simple motor_group wrapper class
- * @version 0.1
+ * @version 1.0-beta
  * @date 06-27-2024
  *
  * @copyright Copyright (c) 2024

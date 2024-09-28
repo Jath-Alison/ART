@@ -2,7 +2,7 @@
  * @file Vec2.h
  * @author Jath Alison (Jath.Alison@gmail.com)
  * @brief Header containing the 2d Vector class
- * @version 0.1
+ * @version 1.0-beta
  * @date 07-13-2024
  *
  * @copyright Copyright (c) 2024
