@@ -2,7 +2,7 @@
  * @file vex.h
  * @author Jath Alison (Jath.Alison@gmail.com)
  * @brief The include file for the Vex Library
- * @version 0.1
+ * @version 1.0-beta
  * @date 06-25-2024
  *
  * @copyright Copyright (c) 2024

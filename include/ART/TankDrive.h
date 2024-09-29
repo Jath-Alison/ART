@@ -2,7 +2,7 @@
  * @file TankDrive.h
  * @author Jath Alison (Jath.Alison@gmail.com)
  * @brief Header containing the TankDrive class
- * @version 0.1
+ * @version 1.0-beta
  * @date 07-14-2024
  *
  * @copyright Copyright (c) 2024
@@ -12,6 +12,7 @@
  * to write driver control code as well as autons by providing the low level
  * controls for more complex functions to use.
  */
+#pragma once
 
 #include "ART/SimpleMotorGroup.h"
 

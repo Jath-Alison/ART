@@ -2,7 +2,7 @@
  * @file PID.h
  * @author Jath Alison (Jath.Alison@gmail.com)
  * @brief Header containing a general use PID class
- * @version 0.1
+ * @version 1.0-beta
  * @date 07-01-2024
  *
  * @copyright Copyright (c) 2024

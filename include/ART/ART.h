@@ -2,7 +2,7 @@
  * @file ART.h
  * @author Jath Alison (Jath.Alison@gmail.com)
  * @brief A file containing includes to the entire ART library
- * @version 0.1
+ * @version 1.0-beta
  * @date 06-27-2024
  *
  * @copyright Copyright (c) 2024
@@ -16,3 +16,8 @@
 
 #include "ART/SimpleMotor.h"
 #include "ART/SimpleMotorGroup.h"
+#include "ART/PID.h"
+#include "ART/Units.h"
+#include "ART/Vec2.h"
+#include "ART/TankDrive.h"
+#include "ART/SmartDrive.h"

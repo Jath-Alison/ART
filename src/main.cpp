@@ -3,7 +3,7 @@
  * @author Jath Alison (Jath.Alison@gmail.com)
  * @brief Source containing the main function and competition functions such as
  * auton and usercontrol
- * @version 0.1
+ * @version 1.0-beta
  * @date 06-25-2024
  *
  * @copyright Copyright (c) 2024
@@ -14,6 +14,7 @@
  */
 
 #include "vex.h"
+#include "robotConfig.h"
 #include "Art\ART.h"
 
 

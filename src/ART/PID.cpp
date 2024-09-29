@@ -2,7 +2,7 @@
  * @file PID.cpp
  * @author Jath Alison (Jath.Alison@gmail.com)
  * @brief Source containing a general use PID class
- * @version 0.1
+ * @version 1.0-beta
  * @date 07-13-2024
  * 
  * @copyright Copyright (c) 2024

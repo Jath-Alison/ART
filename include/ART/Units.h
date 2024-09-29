@@ -2,7 +2,7 @@
  * @file Units.h
  * @author Jath Alison (Jath.Alison@gmail.com)
  * @brief Header containing several Unit classes
- * @version 0.1
+ * @version 1.0-beta
  * @date 07-13-2024
  *
  * @copyright Copyright (c) 2024
@@ -13,6 +13,8 @@
  * be used and converted rather than writing seperate functions for different
  * units.
  */
+#pragma once
+#include <cmath>
 
 namespace art
 {
@@ -424,5 +426,13 @@ namespace art
      * @return Angle - the constructed Angle
      */
     Angle Revolutions(double revolutions);
+
+    /**
+     * @brief Returns the shortest turn path to reach the target angle
+     * 
+     * @param target - an Angle to reach
+     * @return Angle - the shortest angle(with direction) to the target angle
+     */
+    Angle shortestTurnPath(const Angle target);
 
 } // namespace art
