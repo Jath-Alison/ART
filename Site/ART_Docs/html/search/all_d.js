@@ -1,17 +1,13 @@
 var searchData=
 [
-  ['set_0',['set',['../classart_1_1_simple_motor.html#a43b6e632840fe51239ac8b99bb889ca3',1,'art::SimpleMotor::set()'],['../classart_1_1_simple_motor_group.html#a024074f087b1bc7d0fc5c85ba05356e5',1,'art::SimpleMotorGroup::set()']]],
-  ['setconstants_1',['setConstants',['../classart_1_1_p_i_d.html#a48e6e0d85fee382a6dd5cd98890dc01a',1,'art::PID::setConstants(double kp, double ki, double kd)'],['../classart_1_1_p_i_d.html#a98e35ff2630e54d501fdd9a7c4e24759',1,'art::PID::setConstants(double kp, double ki, double kd, double ff)']]],
-  ['setintegralzone_2',['setIntegralZone',['../classart_1_1_p_i_d.html#a4fec456c2d6cac8ea73b34bdb222f2c9',1,'art::PID']]],
-  ['setsettletimeout_3',['setSettleTimeout',['../classart_1_1_p_i_d.html#a51f2292ba08b578a16438fd0391a492e',1,'art::PID']]],
-  ['setsettlezone_4',['setSettleZone',['../classart_1_1_p_i_d.html#ac18582992cde10b65cf9ba2468acdfe1',1,'art::PID']]],
-  ['setspeedmode_5',['setSpeedMode',['../classart_1_1_simple_motor.html#a587a6e68c5090c9fbc64a39d78bcf9ca',1,'art::SimpleMotor::setSpeedMode()'],['../classart_1_1_simple_motor_group.html#ae31784f69698b02438c5dcc23874cee2',1,'art::SimpleMotorGroup::setSpeedMode()']]],
-  ['settimeout_6',['setTimeout',['../classart_1_1_p_i_d.html#a709fd4668212de6b6096b837a4fc7982',1,'art::PID']]],
-  ['settledtimepassed_7',['settledTimePassed',['../classart_1_1_p_i_d.html#ae513a299d4350a8036366085d3385fbe',1,'art::PID']]],
-  ['simplemotor_8',['SimpleMotor',['../classart_1_1_simple_motor.html',1,'art::SimpleMotor'],['../classart_1_1_simple_motor.html#a05e0706379323edec6b414bc3d958995',1,'art::SimpleMotor::SimpleMotor()']]],
-  ['simplemotor_2ecpp_9',['SimpleMotor.cpp',['../_simple_motor_8cpp.html',1,'']]],
-  ['simplemotor_2eh_10',['SimpleMotor.h',['../_simple_motor_8h.html',1,'']]],
-  ['simplemotorgroup_11',['SimpleMotorGroup',['../classart_1_1_simple_motor_group.html',1,'art::SimpleMotorGroup'],['../classart_1_1_simple_motor_group.html#a106ff9f4e946ce06193f2ed76d03b873',1,'art::SimpleMotorGroup::SimpleMotorGroup()']]],
-  ['simplemotorgroup_2ecpp_12',['SimpleMotorGroup.cpp',['../_simple_motor_group_8cpp.html',1,'']]],
-  ['simplemotorgroup_2eh_13',['SimpleMotorGroup.h',['../_simple_motor_group_8h.html',1,'']]]
+  ['pid_0',['PID',['../classart_1_1_p_i_d.html',1,'art::PID'],['../classart_1_1_p_i_d.html#adaff0ebaca15f9dfb8dfb0a244c61f37',1,'art::PID::PID()']]],
+  ['pid_2ecpp_1',['PID.cpp',['../_p_i_d_8cpp.html',1,'']]],
+  ['pid_2eh_2',['PID.h',['../_p_i_d_8h.html',1,'']]],
+  ['pixels_3',['Pixels',['../classart_1_1_length.html#ad4799a3c1c31e383870ad9357ba304de',1,'art::Length::Pixels'],['../namespaceart.html#afde42c16a4787d096058a64fdd6f51c0',1,'art::Pixels()']]],
+  ['pixels_4',['pixels',['../classart_1_1_length.html#ad268048b4b3c2fa3fdd7a453b5d85a90',1,'art::Length']]],
+  ['planned_20for_20future_20versions_5',['planned for future versions',['../md__features.html#autotoc_md2',1,'Features planned for future versions'],['../index.html#autotoc_md11',1,'Features planned for future versions']]],
+  ['plans_6',['Project Lifetime and Development plans',['../index.html#autotoc_md8',1,'']]],
+  ['pre_5fauton_7',['pre_auton',['../main_8cpp.html#ac6b858ea8606cdfaee934aac6be66a96',1,'main.cpp']]],
+  ['project_20goals_8',['Project Goals',['../index.html#autotoc_md5',1,'']]],
+  ['project_20lifetime_20and_20development_20plans_9',['Project Lifetime and Development plans',['../index.html#autotoc_md8',1,'']]]
 ];

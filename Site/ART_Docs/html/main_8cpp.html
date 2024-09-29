@@ -108,6 +108,7 @@ $(function(){initNavTree('main_8cpp.html',''); initResizable(true); });
 <p>Source containing the main function and competition functions such as auton and usercontrol.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="vex_8h_source.html">vex.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="robot_config_8h_source.html">robotConfig.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_a_r_t_8h_source.html">Art\ART.h</a>&quot;</code><br />
 </div>
 <p><a href="main_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -136,7 +137,7 @@ Variables</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Source containing the main function and competition functions such as auton and usercontrol. </p>
 <dl class="section author"><dt>Author</dt><dd>Jath Alison (<a href="#" onclick="location.href='mai'+'lto:'+'Jat'+'h.'+'Ali'+'so'+'n@g'+'ma'+'il.'+'co'+'m'; return false;">Jath.<span class="obfuscator">.nosp@m.</span>Alis<span class="obfuscator">.nosp@m.</span>on@gm<span class="obfuscator">.nosp@m.</span>ail.<span class="obfuscator">.nosp@m.</span>com</a>) </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0-beta </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>06-25-2024</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2024</dd></dl>
 <p>This file is where the competition code is really running. All the Code for the autonomous and usercontrol periods should be here as well as the set-up during pre_auton. </p>
@@ -162,7 +163,7 @@ Variables</h2></td></tr>
 <p>This task is used to control your robot during the autonomous phase of a VEX Competition. You must modify the code to add your own robot specific commands here.</p>
 <p>Code here will run once and be stopped automatically when autonomous ends. It is not guaranteed that the end of the function will be reached and if the end is reached, the program will wait till the end of the autonomous period without calling the function again. </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00058">58</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00059">59</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -186,7 +187,7 @@ Variables</h2></td></tr>
 <p>If you really want, code that needs to run once can be placed at the start of main, but it is recommended you do that in pre_auton instead.</p>
 <dl class="section return"><dt>Returns</dt><dd>int (doesn't actually return anything) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00102">102</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00103">103</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -209,7 +210,7 @@ Variables</h2></td></tr>
 <p>You may want to perform some actions before the competition starts. Do them in the following function. You must return from this function or the autonomous and usercontrol tasks will not be started. This function is only called once after the V5 has been powered on and not every time that the robot is disabled.</p>
 <p>Here, perform All activities that occur before the competition starts Example: clearing encoders, setting servo positions, ... </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00041">41</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00042">42</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -234,7 +235,7 @@ Variables</h2></td></tr>
 <p>Code inside the loop will run continuously until the usercontrol period ends. Here, you should use values from the controller(s) to update the robot.</p>
 <p>A 20 millisecond sleep is included to prevent wasted resources while repeating the loop. </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00080">80</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00081">81</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -254,7 +255,7 @@ Variables</h2></td></tr>
 <p>A global instance of competition. </p>
 <p>This object takes care of running the different Competition Tasks when commands are recived from the field control. </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00026">26</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00027">27</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>

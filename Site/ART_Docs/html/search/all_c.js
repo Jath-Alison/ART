@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['radians_0',['Radians',['../classart_1_1_angle.html#afb5f0164fedd3fa8c9c8c7151c4d6b5b',1,'art::Angle::Radians'],['../namespaceart.html#aa425ee0581ad54a4d69bb1fde51c1fa7',1,'art::Radians()']]],
-  ['radians_1',['radians',['../classart_1_1_angle.html#ab67ed479716baf51ead00ec9cc26bb35',1,'art::Angle']]],
-  ['readme_2emd_2',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
-  ['repeat_3',['repeat',['../vex_8h.html#af2342f2b076ee66e8e72a2cd5b1a7ec9',1,'vex.h']]],
-  ['reset_4',['reset',['../classart_1_1_p_i_d.html#ac4ae4bb09c195cad9f07e2c6ff419be4',1,'art::PID']]],
-  ['revolutions_5',['Revolutions',['../classart_1_1_angle.html#a96e2ccb557c3a2e28c3a084ecb8fe685',1,'art::Angle::Revolutions'],['../namespaceart.html#afa7e25fc40b617fb77028ca9ce81b0da',1,'art::Revolutions()']]],
-  ['revolutions_6',['revolutions',['../classart_1_1_angle.html#a14c4e9380678b1b5de0a99bbd9dd8452',1,'art::Angle']]],
-  ['robotconfig_2ecpp_7',['robotConfig.cpp',['../robot_config_8cpp.html',1,'']]],
-  ['robotconfig_2eh_8',['robotConfig.h',['../robot_config_8h.html',1,'']]]
+  ['of_20contents_0',['Table of Contents',['../index.html#autotoc_md4',1,'']]],
+  ['operator_20double_1',['operator double',['../classart_1_1_length.html#a2d75d20e5e12b66231a307ae159c12e0',1,'art::Length::operator double()'],['../classart_1_1_angle.html#a4a8f811e1a77a7a10a81c33fedaf0528',1,'art::Angle::operator double()']]],
+  ['operator_2a_2',['operator*',['../structart_1_1_vec2.html#a31d7bd7d9661b43d02ab75bd594d41d6',1,'art::Vec2::operator*(double const &amp;scale) const'],['../structart_1_1_vec2.html#ae924b58955f86dcd3177e19349be671d',1,'art::Vec2::operator*(Vec2 const &amp;other) const']]],
+  ['operator_2a_3d_3',['operator*=',['../structart_1_1_vec2.html#a50088660cef71dd0e2b1eed96285c511',1,'art::Vec2']]],
+  ['operator_2b_4',['operator+',['../structart_1_1_vec2.html#a56735a00f1880d2c069454135164d60d',1,'art::Vec2']]],
+  ['operator_2b_3d_5',['operator+=',['../structart_1_1_vec2.html#a0338276803d9b97cba8734d46d848ba4',1,'art::Vec2']]],
+  ['operator_2d_6',['operator-',['../structart_1_1_vec2.html#a41c884d45eb8554847085fd1a56d8296',1,'art::Vec2']]],
+  ['operator_2d_3d_7',['operator-=',['../structart_1_1_vec2.html#a90a86efd43ef72b670719697d950377a',1,'art::Vec2']]],
+  ['operator_3d_8',['operator=',['../classart_1_1_length.html#acb5155ebca5e39cb8448f5e038ef31f0',1,'art::Length::operator=()'],['../classart_1_1_angle.html#ade9ec4d8e6a4426a1a485e95931500c9',1,'art::Angle::operator=()']]]
 ];

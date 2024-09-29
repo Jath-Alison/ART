@@ -5,6 +5,7 @@ var namespaceart =
     [ "PID", "classart_1_1_p_i_d.html", "classart_1_1_p_i_d" ],
     [ "SimpleMotor", "classart_1_1_simple_motor.html", "classart_1_1_simple_motor" ],
     [ "SimpleMotorGroup", "classart_1_1_simple_motor_group.html", "classart_1_1_simple_motor_group" ],
+    [ "SmartDrive", "classart_1_1_smart_drive.html", "classart_1_1_smart_drive" ],
     [ "TankDrive", "classart_1_1_tank_drive.html", "classart_1_1_tank_drive" ],
     [ "Vec2", "structart_1_1_vec2.html", "structart_1_1_vec2" ],
     [ "TimePoint", "namespaceart.html#a17589c624f1bc91262d1cbc096707b81", null ],
@@ -17,5 +18,6 @@ var namespaceart =
     [ "Pixels", "namespaceart.html#afde42c16a4787d096058a64fdd6f51c0", null ],
     [ "Radians", "namespaceart.html#aa425ee0581ad54a4d69bb1fde51c1fa7", null ],
     [ "Revolutions", "namespaceart.html#afa7e25fc40b617fb77028ca9ce81b0da", null ],
+    [ "shortestTurnPath", "namespaceart.html#a904ec4d5aa62d02e12977a38797a403d", null ],
     [ "Tiles", "namespaceart.html#a78106cc452c1323606b6fdc01692e578", null ]
 ];
