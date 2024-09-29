@@ -1,4 +1,4 @@
-:: Doxygen ../Doxyfile
+Doxygen ../Doxyfile
 
 @echo off
 :: Define source and destination directories
