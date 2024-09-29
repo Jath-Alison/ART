@@ -30,7 +30,7 @@ Check out the latest release [here](https://github.com/Jath-Alison/ART/releases/
 
 ## Documentation
 
-Check out the API Reference [here](https://jath-alison.github.io/ART_Docs/html/index.html).
+Check out the API Reference [here](https://jath-alison.github.io/ART/ART_Docs/index.html).
 
 ## Project Lifetime and Development plans
 
