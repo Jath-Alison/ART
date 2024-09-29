@@ -2,7 +2,7 @@
  * @file TankDrive.cpp
  * @author Jath Alison (Jath.Alison@gmail.com)
  * @brief Source containing the TankDrive class
- * @version 0.1
+ * @version 1.0-beta
  * @date 07-15-2024
  *
  * @copyright Copyright (c) 2024

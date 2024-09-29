@@ -2,7 +2,7 @@
  * @file ART.h
  * @author Jath Alison (Jath.Alison@gmail.com)
  * @brief A file containing includes to the entire ART library
- * @version 0.1
+ * @version 1.0-beta
  * @date 06-27-2024
  *
  * @copyright Copyright (c) 2024
