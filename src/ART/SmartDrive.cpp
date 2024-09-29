@@ -139,8 +139,6 @@ namespace art
 
         while (Degrees(targetAngle.degrees() - m_inert.rotation(vex::degrees)) * dir > 0)
         {
-            Angle error = Degrees(targetAngle.degrees() - m_inert.rotation(vex::degrees));
-
             arcade(0, speed);
 
             wait(20, vex::msec);
