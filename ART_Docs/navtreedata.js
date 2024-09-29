@@ -1,2 +1,0 @@
-/*! For license information please see navtreedata.js.LICENSE.txt */
-var NAVTREE=[["ART","index.html"]],NAVTREEINDEX=["index.html"],SYNCONMSG="click to disable panel synchronisation",SYNCOFFMSG="click to enable panel synchronisation";

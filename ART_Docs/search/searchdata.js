@@ -1,1 +1,0 @@
-var indexSectionsWithContent={},indexSectionNames={},indexSectionLabels={};
