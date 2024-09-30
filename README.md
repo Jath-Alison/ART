@@ -40,6 +40,8 @@ I only really have plans for a few initial versions and a few much later ones, s
 
 ## Features
 
+For a full plan of features across different releases see [here](Features.md).
+
 ### V1.0 (Initial Version)
 
 - TankDrive wrapper class
@@ -58,8 +60,6 @@ I only really have plans for a few initial versions and a few much later ones, s
   - [PATH.JERRYIO](path.jerryio.com) support
 - Macros and Auton support classes
 - Custom Timer class
-
-For a full plan of features across different releases see [here](Features.md). (currently an empty link)
 
 ## Contact
 
