@@ -6,6 +6,7 @@ Source containing the main function and competition functions such as auton and 
 
 
 {\ttfamily \#include "{}vex.\+h"{}}\newline
+{\ttfamily \#include "{}robot\+Config.\+h"{}}\newline
 {\ttfamily \#include "{}Art\textbackslash{}\+ART.\+h"{}}\newline
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -32,7 +33,7 @@ Source containing the main function and competition functions such as auton and 
 Jath Alison (\href{mailto:Jath.Alison@gmail.com}{\texttt{ Jath.\+Alison@gmail.\+com}}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-0.\+1 
+1.\+0-\/beta 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
 06-\/25-\/2024
@@ -61,7 +62,7 @@ This task is used to control your robot during the autonomous phase of a VEX Com
 
 Code here will run once and be stopped automatically when autonomous ends. It is not guaranteed that the end of the function will be reached and if the end is reached, the program will wait till the end of the autonomous period without calling the function again. 
 
-Definition at line \mbox{\hyperlink{main_8cpp_source_l00058}{58}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00059}{59}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
 
 \Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{main.cpp@{main.cpp}!main@{main}}
 \index{main@{main}!main.cpp@{main.cpp}}
@@ -82,7 +83,7 @@ int (doesn\textquotesingle{}t actually return anything)
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{main_8cpp_source_l00102}{102}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00103}{103}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
 
 \Hypertarget{main_8cpp_ac6b858ea8606cdfaee934aac6be66a96}\index{main.cpp@{main.cpp}!pre\_auton@{pre\_auton}}
 \index{pre\_auton@{pre\_auton}!main.cpp@{main.cpp}}
@@ -98,7 +99,7 @@ You may want to perform some actions before the competition starts. Do them in t
 
 Here, perform All activities that occur before the competition starts Example\+: clearing encoders, setting servo positions, ... 
 
-Definition at line \mbox{\hyperlink{main_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
 
 \Hypertarget{main_8cpp_a0b51ae97a13db57021eefe87a9903444}\index{main.cpp@{main.cpp}!usercontrol@{usercontrol}}
 \index{usercontrol@{usercontrol}!main.cpp@{main.cpp}}
@@ -118,7 +119,7 @@ Code inside the loop will run continuously until the usercontrol period ends. He
 
 A 20 millisecond sleep is included to prevent wasted resources while repeating the loop. 
 
-Definition at line \mbox{\hyperlink{main_8cpp_source_l00080}{80}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00081}{81}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
 
 
 
@@ -135,5 +136,5 @@ A global instance of competition.
 
 This object takes care of running the different Competition Tasks when commands are recived from the field control. 
 
-Definition at line \mbox{\hyperlink{main_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
 

@@ -153,27 +153,50 @@
 \DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00163}00163\ }
 \DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00164}\mbox{\hyperlink{classart_1_1_angle_a4a8f811e1a77a7a10a81c33fedaf0528}{00164}}\ \ \ \ \ Angle::operator\ double()}
 \DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00165}00165\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \textcolor{comment}{//constrain();}}
+\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ constrain();}}
 \DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\_value;}
 \DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00168}00168\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00169}00169\ }
 \DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00170}\mbox{\hyperlink{classart_1_1_angle_ae7d09256f1000560d084398127ff8126}{00170}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classart_1_1_angle_ae7d09256f1000560d084398127ff8126}{Angle::degrees}}()}
 \DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00171}00171\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \textcolor{comment}{//constrain();}}
+\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ constrain();}}
 \DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classart_1_1_angle_a38a9b1abe38b3327f8b9d155aff07aaa}{m\_value}}\ *\ 180\ /\ 3.14159265f;}
 \DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00174}00174\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00175}00175\ }
 \DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00176}\mbox{\hyperlink{classart_1_1_angle_ab67ed479716baf51ead00ec9cc26bb35}{00176}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classart_1_1_angle_ab67ed479716baf51ead00ec9cc26bb35}{Angle::radians}}()}
 \DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00177}00177\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \textcolor{comment}{//constrain();}}
+\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ constrain();}}
 \DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classart_1_1_angle_a38a9b1abe38b3327f8b9d155aff07aaa}{m\_value}};}
 \DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00180}00180\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00181}00181\ }
 \DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00182}\mbox{\hyperlink{classart_1_1_angle_a14c4e9380678b1b5de0a99bbd9dd8452}{00182}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classart_1_1_angle_a14c4e9380678b1b5de0a99bbd9dd8452}{Angle::revolutions}}()}
 \DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00183}00183\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \textcolor{comment}{//constrain();}}
+\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ constrain();}}
 \DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classart_1_1_angle_a38a9b1abe38b3327f8b9d155aff07aaa}{m\_value}}\ /\ (3.14159265f\ *\ 2.f);}
 \DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00186}00186\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00187}00187\ \}\textcolor{comment}{//\ namespace\ art}}
+\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00188}\mbox{\hyperlink{namespaceart_a904ec4d5aa62d02e12977a38797a403d}{00188}}\ \ \ \ \ \mbox{\hyperlink{classart_1_1_angle}{Angle}}\ \mbox{\hyperlink{namespaceart_a904ec4d5aa62d02e12977a38797a403d}{shortestTurnPath}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classart_1_1_angle}{Angle}}\ target)}
+\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00189}00189\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classart_1_1_angle}{Angle}}\ angle\ =\ target;}
+\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ angle.\mbox{\hyperlink{classart_1_1_angle_ace8d0ebeae58b407fca15f951816e578}{constrain}}();}
+\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::abs(angle.\mbox{\hyperlink{classart_1_1_angle_a14c4e9380678b1b5de0a99bbd9dd8452}{revolutions}}())\ <\ .5)}
+\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ angle;}
+\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (angle.\mbox{\hyperlink{classart_1_1_angle_a14c4e9380678b1b5de0a99bbd9dd8452}{revolutions}}()\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceart_afa7e25fc40b617fb77028ca9ce81b0da}{Revolutions}}(1\ -\/\ angle.\mbox{\hyperlink{classart_1_1_angle_a14c4e9380678b1b5de0a99bbd9dd8452}{revolutions}}());}
+\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceart_afa7e25fc40b617fb77028ca9ce81b0da}{Revolutions}}(1\ +\ angle.\mbox{\hyperlink{classart_1_1_angle_a14c4e9380678b1b5de0a99bbd9dd8452}{revolutions}}());}
+\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classart_1_1_angle}{Angle}}();}
+\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00208}00208\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00209}00209\ }
+\DoxyCodeLine{\Hypertarget{_units_8cpp_source_l00210}00210\ \}\ \textcolor{comment}{//\ namespace\ art}}
 
 \end{DoxyCode}

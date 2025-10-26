@@ -11,5 +11,6 @@ var _units_8h =
     [ "Pixels", "_units_8h.html#afde42c16a4787d096058a64fdd6f51c0", null ],
     [ "Radians", "_units_8h.html#aa425ee0581ad54a4d69bb1fde51c1fa7", null ],
     [ "Revolutions", "_units_8h.html#afa7e25fc40b617fb77028ca9ce81b0da", null ],
+    [ "shortestTurnPath", "_units_8h.html#a904ec4d5aa62d02e12977a38797a403d", null ],
     [ "Tiles", "_units_8h.html#a78106cc452c1323606b6fdc01692e578", null ]
 ];

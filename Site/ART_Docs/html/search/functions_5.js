@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['inches_0',['Inches',['../namespaceart.html#a5e390585e386f978f1f6b75850e1a89a',1,'art']]],
-  ['inches_1',['inches',['../classart_1_1_length.html#ab4cfc27425cde84c5e9522d2535be0f3',1,'art::Length']]],
-  ['iscompleted_2',['isCompleted',['../classart_1_1_p_i_d.html#a84e75b2d470018cc41e687cba1b5f0b2',1,'art::PID']]]
+  ['horizontaltracker_0',['HorizontalTracker',['../structart_1_1_smart_drive_1_1_horizontal_tracker.html#a29f6c68c77692aba52074ce20c93e242',1,'art::SmartDrive::HorizontalTracker::HorizontalTracker()'],['../structart_1_1_smart_drive_1_1_horizontal_tracker.html#a11e8fc15e6b92af873385fd062cfd7af',1,'art::SmartDrive::HorizontalTracker::HorizontalTracker(vex::rotation rotation, Length wheelSize, double gearRatio)'],['../structart_1_1_smart_drive_1_1_horizontal_tracker.html#afdecda0f55c8929baaa4ad0e62fdd56a',1,'art::SmartDrive::HorizontalTracker::HorizontalTracker(vex::rotation rotation, Length wheelSize, double gearRatio, Length wheelOffset)']]]
 ];

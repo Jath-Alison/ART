@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['leftsplitarcade_0',['LeftSplitArcade',['../classart_1_1_tank_drive.html#a29e11d6dfedf6354e39f465204a3cb1a',1,'art::TankDrive']]],
-  ['leftsplitarcadecurved_1',['LeftSplitArcadeCurved',['../classart_1_1_tank_drive.html#afbaccfb1af38855e56e6a0e372f4e4c8',1,'art::TankDrive']]],
-  ['length_2',['Length',['../classart_1_1_length.html#aa58fb4947405f6a7628ca0335594d4ca',1,'art::Length::Length()'],['../classart_1_1_length.html#a548607af857a9ffec4ade9c3009d3467',1,'art::Length::Length(double f)']]]
+  ['inches_0',['Inches',['../namespaceart.html#a5e390585e386f978f1f6b75850e1a89a',1,'art']]],
+  ['inches_1',['inches',['../classart_1_1_length.html#ab4cfc27425cde84c5e9522d2535be0f3',1,'art::Length']]],
+  ['iscompleted_2',['isCompleted',['../classart_1_1_p_i_d.html#a84e75b2d470018cc41e687cba1b5f0b2',1,'art::PID']]]
 ];

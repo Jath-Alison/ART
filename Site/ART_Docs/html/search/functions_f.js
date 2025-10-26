@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['vec2_0',['Vec2',['../structart_1_1_vec2.html#a16374152d5815b52d853353d123ba313',1,'art::Vec2']]]
+  ['update_0',['update',['../classart_1_1_tank_drive.html#a4672da553236966d1716a552523ddc28',1,'art::TankDrive']]],
+  ['usercontrol_1',['usercontrol',['../main_8cpp.html#a0b51ae97a13db57021eefe87a9903444',1,'main.cpp']]]
 ];

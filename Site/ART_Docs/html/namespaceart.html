@@ -123,6 +123,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1_simple_motor_group.html">SimpleMotorGroup</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Simple Motor_Group Wrapper Class.  <a href="classart_1_1_simple_motor_group.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1_smart_drive.html">SmartDrive</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Smarter Drive Class.  <a href="classart_1_1_smart_drive.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classart_1_1_tank_drive.html">TankDrive</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Simple <a class="el" href="classart_1_1_tank_drive.html" title="A Simple TankDrive class.">TankDrive</a> class.  <a href="classart_1_1_tank_drive.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -168,6 +171,9 @@ Functions</h2></td></tr>
 <tr class="memitem:afa7e25fc40b617fb77028ca9ce81b0da" id="r_afa7e25fc40b617fb77028ca9ce81b0da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classart_1_1_angle.html">Angle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa7e25fc40b617fb77028ca9ce81b0da">Revolutions</a> (double revolutions)</td></tr>
 <tr class="memdesc:afa7e25fc40b617fb77028ca9ce81b0da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an <a class="el" href="classart_1_1_angle.html" title="A Utility Unit class for Angles.">Angle</a> from Revolutions.  <br /></td></tr>
 <tr class="separator:afa7e25fc40b617fb77028ca9ce81b0da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a904ec4d5aa62d02e12977a38797a403d" id="r_a904ec4d5aa62d02e12977a38797a403d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classart_1_1_angle.html">Angle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a904ec4d5aa62d02e12977a38797a403d">shortestTurnPath</a> (const <a class="el" href="classart_1_1_angle.html">Angle</a> target)</td></tr>
+<tr class="memdesc:a904ec4d5aa62d02e12977a38797a403d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the shortest turn path to reach the target angle.  <br /></td></tr>
+<tr class="separator:a904ec4d5aa62d02e12977a38797a403d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a17589c624f1bc91262d1cbc096707b81" name="a17589c624f1bc91262d1cbc096707b81"></a>
@@ -439,6 +445,34 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="classart_1_1_angle.html" title="A Utility Unit class for Angles.">Angle</a> - the constructed <a class="el" href="classart_1_1_angle.html" title="A Utility Unit class for Angles.">Angle</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_units_8cpp_source.html#l00134">134</a> of file <a class="el" href="_units_8cpp_source.html">Units.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a904ec4d5aa62d02e12977a38797a403d" name="a904ec4d5aa62d02e12977a38797a403d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a904ec4d5aa62d02e12977a38797a403d">&#9670;&#160;</a></span>shortestTurnPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classart_1_1_angle.html">Angle</a> art::shortestTurnPath </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classart_1_1_angle.html">Angle</a></td>          <td class="paramname"><span class="paramname"><em>target</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the shortest turn path to reach the target angle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">target</td><td>- an <a class="el" href="classart_1_1_angle.html" title="A Utility Unit class for Angles.">Angle</a> to reach </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classart_1_1_angle.html" title="A Utility Unit class for Angles.">Angle</a> - the shortest angle(with direction) to the target angle </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_units_8cpp_source.html#l00188">188</a> of file <a class="el" href="_units_8cpp_source.html">Units.cpp</a>.</p>
 
 </div>
 </div>

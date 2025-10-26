@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['leftsplitarcade_0',['LeftSplitArcade',['../classart_1_1_tank_drive.html#a29e11d6dfedf6354e39f465204a3cb1a',1,'art::TankDrive']]],
-  ['leftsplitarcadecurved_1',['LeftSplitArcadeCurved',['../classart_1_1_tank_drive.html#afbaccfb1af38855e56e6a0e372f4e4c8',1,'art::TankDrive']]],
-  ['length_2',['Length',['../classart_1_1_length.html',1,'art::Length'],['../classart_1_1_length.html#aa58fb4947405f6a7628ca0335594d4ca',1,'art::Length::Length()'],['../classart_1_1_length.html#a548607af857a9ffec4ade9c3009d3467',1,'art::Length::Length(double f)']]],
-  ['list_3',['Todo List',['../todo.html',1,'']]]
+  ['horizontaltracker_0',['HorizontalTracker',['../structart_1_1_smart_drive_1_1_horizontal_tracker.html',1,'art::SmartDrive::HorizontalTracker'],['../structart_1_1_smart_drive_1_1_horizontal_tracker.html#a29f6c68c77692aba52074ce20c93e242',1,'art::SmartDrive::HorizontalTracker::HorizontalTracker()'],['../structart_1_1_smart_drive_1_1_horizontal_tracker.html#a11e8fc15e6b92af873385fd062cfd7af',1,'art::SmartDrive::HorizontalTracker::HorizontalTracker(vex::rotation rotation, Length wheelSize, double gearRatio)'],['../structart_1_1_smart_drive_1_1_horizontal_tracker.html#afdecda0f55c8929baaa4ad0e62fdd56a',1,'art::SmartDrive::HorizontalTracker::HorizontalTracker(vex::rotation rotation, Length wheelSize, double gearRatio, Length wheelOffset)']]]
 ];

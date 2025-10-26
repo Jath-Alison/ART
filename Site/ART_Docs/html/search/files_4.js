@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['simplemotor_2ecpp_0',['SimpleMotor.cpp',['../_simple_motor_8cpp.html',1,'']]],
-  ['simplemotor_2eh_1',['SimpleMotor.h',['../_simple_motor_8h.html',1,'']]],
-  ['simplemotorgroup_2ecpp_2',['SimpleMotorGroup.cpp',['../_simple_motor_group_8cpp.html',1,'']]],
-  ['simplemotorgroup_2eh_3',['SimpleMotorGroup.h',['../_simple_motor_group_8h.html',1,'']]]
+  ['readme_2emd_0',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
+  ['robotconfig_2ecpp_1',['robotConfig.cpp',['../robot_config_8cpp.html',1,'']]],
+  ['robotconfig_2eh_2',['robotConfig.h',['../robot_config_8h.html',1,'']]]
 ];
